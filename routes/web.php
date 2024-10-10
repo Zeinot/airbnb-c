@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home-page');
 });
+
+Route::get('/apartments', [ApartmentController::class, "index"])->name("apartments.index");
 
 
 Route::get('/n', function () {
