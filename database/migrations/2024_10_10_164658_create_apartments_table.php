@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->string("title");
             $table->string("type");
             $table->string("city");
+            $table->string("address");
             $table->integer("price_per_day");
 //            need to add table booking later
 //            $table->foreignId("booking_id");
