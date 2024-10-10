@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ReservationController;
@@ -8,6 +9,8 @@ use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ListingController::class, 'index'])->name('home');
+
+Route::get('/apartments', [ApartmentController::class, "index"])->name("apartments.index");
 
 
 Route::get('/n', function () {
