@@ -1,4 +1,4 @@
-@extends("layouts.home")
+@extends("layouts.custom.home")
 @section("content")
-home page here
+    home page here
 @endsection
