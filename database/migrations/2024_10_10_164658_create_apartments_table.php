@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
+            $table->string("title");
             $table->string("type");
             $table->string("city");
             $table->integer("price_per_day");
