@@ -38,7 +38,7 @@
                         </svg>
                         <span class="sr-only">Toggle sidebar</span>
                     </button>
-                    <a href="https://flowbite.com" class="flex items-center justify-between mr-4">
+                    <a href="{{ route('apartments.admin_index') }}" class="flex items-center justify-between mr-4">
                         <img
                             src="https://flowbite.s3.amazonaws.com/logo.svg"
                             class="mr-3 h-8"
