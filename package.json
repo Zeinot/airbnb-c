@@ -21,9 +21,9 @@
         "@tiptap/pm": "^2.8.0",
         "@tiptap/starter-kit": "^2.8.0",
         "filepond": "^4.31.4",
+        "flowbite-typography": "^1.0.4",
         "simple-datatables": "^9.2.1"
     },
-
     "overrides": {
         "prosemirror-model": "1.19.3"
     }

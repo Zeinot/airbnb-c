@@ -1,5 +1,6 @@
 import * as FilePond from 'filepond';
 import 'filepond/dist/filepond.min.css';
+import "./editor.js"
 // Get a reference to the file input element
 const inputElement = document.querySelector('input[type="file"]');
 
