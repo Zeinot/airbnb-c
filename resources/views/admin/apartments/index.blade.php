@@ -44,9 +44,9 @@
                             class="mr-3 h-8"
                             alt="Flowbite Logo"
                         />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dashboard</span>
                     </a>
-                    <form action="#" method="GET" class="hidden md:block md:pl-2">
+{{--                    <form action="#" method="GET" class="hidden md:block md:pl-2">
                         <label for="topbar-search" class="sr-only">Search</label>
                         <div class="relative md:w-64 md:w-96">
                             <div
@@ -73,9 +73,9 @@
                                 placeholder="Search"
                             />
                         </div>
-                    </form>
+                    </form>--}}
                 </div>
-                <div class="flex items-center lg:order-2">
+{{--                <div class="flex items-center lg:order-2">
                     <button
                         type="button"
                         data-drawer-toggle="drawer-navigation"
@@ -730,7 +730,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </nav>
 
@@ -742,7 +742,7 @@
             id="drawer-navigation"
         >
             <div class="overflow-y-auto py-5 px-3 h-full bg-white dark:bg-gray-800">
-                <form action="#" method="GET" class="md:hidden mb-2">
+{{--                <form action="#" method="GET" class="md:hidden mb-2">
                     <label for="sidebar-search" class="sr-only">Search</label>
                     <div class="relative">
                         <div
@@ -769,7 +769,7 @@
                             placeholder="Search"
                         />
                     </div>
-                </form>
+                </form>--}}
                 <ul class="space-y-2">
                     <li>
                         <a
