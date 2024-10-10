@@ -12,6 +12,7 @@ Route::get('/', [ListingController::class, 'index'])->name('home');
 
 Route::get('/apartments', [ApartmentController::class, "index"])->name("apartments.index");
 Route::get('/admin', [ApartmentController::class, "admin_index"])->name("apartments.admin_index");
+Route::get('/admin/apartments/create', [ApartmentController::class, "create"])->name("apartments.create");
 
 
 Route::get('/n', function () {
