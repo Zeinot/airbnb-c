@@ -72,5 +72,8 @@ export default {
 
     plugins: [forms,   require('flowbite/plugin')({
         datatables: true,
-    }),],
+        wysiwyg: true,
+    }),
+        require('flowbite-typography'),
+    ],
 };
