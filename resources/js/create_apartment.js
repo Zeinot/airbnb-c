@@ -1,0 +1,13 @@
+import * as FilePond from 'filepond';
+import 'filepond/dist/filepond.min.css';
+// Get a reference to the file input element
+const inputElement = document.querySelector('input[type="file"]');
+
+// Create a FilePond instance
+const pond = FilePond.create(inputElement, {
+    required: true,
+    allowMultiple: true,
+    storeAsFile: true,
+    credits: false
+});
+
