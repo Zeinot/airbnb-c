@@ -15,6 +15,11 @@ class ApartmentController extends Controller
 //        dump(Apartment::all());
         return view("apartments.index");
     }
+ public function admin_index()
+    {
+//        dump(Apartment::all());
+        return view("admin.apartments.index");
+    }
 
     /**
      * Show the form for creating a new resource.
