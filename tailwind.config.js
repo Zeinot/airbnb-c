@@ -70,10 +70,10 @@ export default {
         }
     },
 
-    plugins: [forms,   require('flowbite/plugin')({
+    plugins: [forms,  require('flowbite-typography'),  require('flowbite/plugin')({
         datatables: true,
         wysiwyg: true,
     }),
-        require('flowbite-typography'),
+
     ],
 };
