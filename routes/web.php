@@ -7,7 +7,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [ListingController::class, 'index']);
+Route::get('/', [ListingController::class, 'index'])->name('home');
+
 
 Route::get('/n', function () {
     return view('welcome');
