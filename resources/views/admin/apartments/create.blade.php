@@ -68,7 +68,7 @@
                     <label for="images"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photos</label>
                     <input
-                        id="images" type="file" required multiple/>
+                        id="images" name="images[]" type="file" required multiple/>
                 </div>
                 <div>
                     <label for="editor"

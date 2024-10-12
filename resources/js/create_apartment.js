@@ -11,7 +11,7 @@ const pond = FilePond.create(inputElement, {
     storeAsFile: true,
     credits: false,
     allowReorder: true,
-    name: "images",
+    name: "images[]",
     labelIdle : 'Drag & Drop your photos or <span class="filepond--label-action"> Browse </span>'
 });
 
