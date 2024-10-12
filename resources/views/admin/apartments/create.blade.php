@@ -81,7 +81,7 @@
                     <label for="editor"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                     <input
-                        id="description" name="description"/>
+                        id="description" name="description" hidden/>
                     <div
                         class="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
                         <div class="px-3 py-2 border-b dark:border-gray-600">
@@ -761,15 +761,19 @@
                         class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                     Cancel
                 </button>
-                <button type="button"
-                        onclick="document.getElementById('description').innerHTML = editor.getHTML(); alert(editor.getHTML())"
-                        class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                    Create Apartment b
-                </button>  <button type="submit"
-                        onclick="()=>{document.getElementById('description').innerHTML = editor.getHTML(); console.log(editor.getHTML())}"
+                <script>
+                    const handleSubmit = () => {
+                        document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
+                        // console.log(document.getElementById('description').value)
+                    }
+                </script>
+                <button type="submit"
+                        onclick="handleSubmit()"
                         class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                     Create Apartment
                 </button>
+{{--                <button type="submit">--}}
+{{--                </button>--}}
                 <br/>
                 <button disabled type="button"
                         class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center">
