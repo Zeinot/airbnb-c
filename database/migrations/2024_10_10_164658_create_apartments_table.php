@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string("type");
             $table->string("city");
             $table->string("address");
+            $table->text("description");
             $table->float("price");
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
