@@ -6,63 +6,67 @@
             class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form class="space-y-6" action="#">
                 <h5 class="text-xl font-medium text-gray-900 dark:text-white">Create Apartment</h5>
-
                 <div>
                     <label for="title"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                     <input type="text" name="title" id="title"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                           placeholder="Title ..." required/>    <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
-                        Username already taken!</p>
-                </div>   <div class="grid gap-6 mb-6 md:grid-cols-4 sm:grid-cols-2"> <div>
-                    <label for="city"
-                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
-                    <input type="text" name="city" id="city"
-                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                           placeholder="City ..." required/>    <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
-                            Username already taken!</p>
-                </div>
-                <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-                    <input type="password" name="password" id="password" placeholder="Address ..."
-                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                           required/>
+                           placeholder="Title ..." required/>
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
-                        Username already taken!</p>
-
+                        Username already taken!
+                    </p>
                 </div>
-
-
-                <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price ($)</label>
-                    <input type="number" name="price" id="price"
-                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                           placeholder="$2999" required="">
-                    <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
-                        Username already taken!</p>
-
-                </div>
-                <div>
-                    <label for="type"
-                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
-                    <select id="type"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                        <option selected="" disabled>Select</option>
-                        <option value="TV">TV/Monitors</option>
-                        <option value="PC">PC</option>
-                        <option value="GA">Gaming/Console</option>
-                        <option value="PH">Phones</option>
-                    </select>
-                    <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
-                        Username already taken!</p>
-                </div>
+                <div class="grid gap-6 mb-6 md:grid-cols-4 sm:grid-cols-2">
+                    <div>
+                        <label for="city"
+                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
+                        <input type="text" name="city" id="city"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                               placeholder="City ..." required/>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
+                            Username already taken!
+                        </p>
+                    </div>
+                    <div>
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
+                        <input type="text" name="address" id="address" placeholder="Address ..."
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                               required/>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
+                            Username already taken!
+                        </p>
+                    </div>
+                    <div>
+                        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price ($)</label>
+                        <input type="number" name="price" id="price"
+                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                               placeholder="$2999" required>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
+                            Username already taken!
+                        </p>
+                    </div>
+                    <div>
+                        <label for="type"
+                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
+                        <select id="type"
+                                required
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option selected disabled>Select</option>
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Yearly">Yearly</option>
+                        </select>
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
+                            Username already taken!
+                        </p>
+                    </div>
                 </div>
                 <div>
                     <label for="images"
-                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photos</label> <input
+                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photos</label>
+                    <input
                         id="images" type="file"/>
-
-
                 </div>
                 <div>
                     <label for="images"
@@ -739,10 +743,9 @@
                         </div>
                     </div>
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
-                        Username already taken!</p>
+                        Username already taken!
+                    </p>
                 </div>
-
-
                 <button type="button"
                         class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                     Cancel
@@ -758,7 +761,6 @@
                     </svg>
                     Loading...
                 </button>
-
             </form>
         </div>
     </div>
