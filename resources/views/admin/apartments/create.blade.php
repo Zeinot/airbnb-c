@@ -69,7 +69,7 @@
                         id="images" type="file"/>
                 </div>
                 <div>
-                    <label for="images"
+                    <label for="editor"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                     <div
                         class="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
@@ -536,7 +536,7 @@
                                 </div>
                                 <!-- Heading Dropdown -->
                                 <div id="typographyDropdown"
-                                     class="z-10 hidden w-72 rounded bg-white p-2 shadow dark:bg-gray-700">
+                                     class="z-40 hidden w-72 rounded bg-white p-2 shadow dark:bg-gray-700">
                                     <ul class="space-y-1 text-sm font-medium"
                                         aria-labelledby="typographyDropdownButton">
                                         <li>
