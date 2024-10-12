@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apartment;
+use App\Models\ApartmentImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -54,7 +55,13 @@ class ApartmentController extends Controller
         ]);
 
         DB::transaction(function () use ($request) {
-            $apartment = Apartment::create([]);
+            $apartment = Apartment::create([
+                "title" => $request->title,
+                "type" => $request->type,
+                "city" => $request->city,
+                "address" => $request->address,
+                "price" => $request->price,
+            ]);
             $images = request()->file('images');
             foreach ($images as $file) {
 
