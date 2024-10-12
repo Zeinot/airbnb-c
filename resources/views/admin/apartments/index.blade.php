@@ -2,6 +2,7 @@
 @section("content")
    @dump(\App\Models\Apartment::all())
    @dump(\App\Models\Apartment::all()[0]->apartment_images[0])
+
     <div
         class="rounded-lg border-gray-300 dark:border-gray-600 mb-4"
     >
