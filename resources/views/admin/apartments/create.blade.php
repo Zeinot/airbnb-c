@@ -12,7 +12,8 @@
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                     <input type="text" name="title" id="title"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                           placeholder="Title ..." required/>
+                           placeholder="Title ..."
+                    />
                     <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
                         Username already taken!
                     </p>
@@ -23,7 +24,8 @@
                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
                         <input type="text" name="city" id="city"
                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                               placeholder="City ..." required/>
+                               placeholder="City ..."
+                        />
                         <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
                             Username already taken!
                         </p>
@@ -32,7 +34,8 @@
                         <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
                         <input type="text" name="address" id="address" placeholder="Address ..."
                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                               required/>
+
+                        />
                         <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
                             Username already taken!
                         </p>
@@ -42,7 +45,8 @@
                             ($)</label>
                         <input type="number" name="price" id="price"
                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                               placeholder="$2999" required>
+                               placeholder="$2999"
+                        >
                         <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>
                             Username already taken!
                         </p>
@@ -52,7 +56,8 @@
                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
                         <select id="type"
                                 name="type"
-                                required
+
+
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                             <option selected disabled>Select</option>
                             <option value="Daily">Daily</option>
@@ -69,11 +74,14 @@
                     <label for="images"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photos</label>
                     <input
-                        id="images" name="images[]" type="file" required multiple/>
+                        id="images" name="images[]" type="file"
+                        multiple/>
                 </div>
                 <div>
                     <label for="editor"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                    <input
+                        id="description" name="description"/>
                     <div
                         class="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
                         <div class="px-3 py-2 border-b dark:border-gray-600">
@@ -753,7 +761,12 @@
                         class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                     Cancel
                 </button>
-                <button type="submit"
+                <button type="button"
+                        onclick="document.getElementById('description').innerHTML = editor.getHTML(); alert(editor.getHTML())"
+                        class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                    Create Apartment b
+                </button>  <button type="submit"
+                        onclick="()=>{document.getElementById('description').innerHTML = editor.getHTML(); console.log(editor.getHTML())}"
                         class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                     Create Apartment
                 </button>
