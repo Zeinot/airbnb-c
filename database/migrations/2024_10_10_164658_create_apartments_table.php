@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string("type");
             $table->string("city");
             $table->string("address");
-            $table->float("price_per_day");
+            $table->float("price");
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
