@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Apartment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApartmentController extends Controller
 {
@@ -51,6 +52,21 @@ class ApartmentController extends Controller
             "images.*.mimes" => "Images must be jpg,jpeg,png,webp",
             "images.*.max" => "Images too large",
         ]);
+
+        DB::transaction(function () use ($request) {
+            $apartment = Apartment::create([]);
+            $images = request()->file('images');
+            foreach ($images as $file) {
+
+                $path = $file->store('apartment_images', 'public');
+                $apartment_image = ApartmentImages::create([
+                    "path" => $path,
+                    "product_id" => $apartment->id,
+                ]);
+//                throw new Exception("Something went wrong");
+
+            }
+        });
     }
 
     /**
