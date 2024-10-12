@@ -1,6 +1,6 @@
 @extends("layouts.custom.admin")
 @section("content")
-{{--   @dump(\App\Models\Apartment::all())   --}}
+   @dump(\App\Models\Apartment::all())
     <div
         class="rounded-lg border-gray-300 dark:border-gray-600 mb-4"
     >
