@@ -61,17 +61,15 @@ class ApartmentController extends Controller
                 "city" => $request->city,
                 "address" => $request->address,
                 "price" => $request->price,
+                "user_id" => auth()->user()->id,
             ]);
             $images = request()->file('images');
             foreach ($images as $file) {
-
                 $path = $file->store('apartment_images', 'public');
                 $apartment_image = ApartmentImages::create([
                     "path" => $path,
                     "product_id" => $apartment->id,
                 ]);
-//                throw new Exception("Something went wrong");
-
             }
         });
     }
