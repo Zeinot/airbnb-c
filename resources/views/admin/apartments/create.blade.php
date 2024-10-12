@@ -31,7 +31,8 @@
     <div class="rounded-lg border-gray-300 dark:border-gray-600 mb-4">
         <div
             class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <form id="createForm" class="space-y-6" method="POST" action="{{route("apartments.store")}}" enctype="multipart/form-data">
+            <form id="createForm" class="space-y-6" method="POST" action="{{route("apartments.store")}}"
+                  enctype="multipart/form-data">
                 @csrf
                 <h5 class="text-xl font-medium text-gray-900 dark:text-white">Create Apartment</h5>
                 <div>
@@ -786,12 +787,14 @@
                     {{--                        Username already taken!--}}
                     {{--                    </p>--}}
                 </div>
-              <div class="flex gap-3">  <button type="button"
-                             class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                      Cancel
-                  </button>
-                  <script>
-                      const loading = `<button disabled type="button"
+
+                <div class="flex gap-3">
+                    <a  href="{{ route('apartments.admin_index') }}"
+                            class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        Cancel
+                    </a>
+                    <script>
+                        const loading = `<button disabled type="button"
                         class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center">
                     <svg aria-hidden="true" role="status" class="inline w-4 h-4 me-3 text-white animate-spin"
                          viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -804,21 +807,22 @@
                     </svg>
                     Loading...
                 </button>`
-                      const handleSubmit = () => {
-                          document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
-                          document.getElementById("submit").outerHTML = loading;
-                          document.getElementById("createForm").submit();
+                        const handleSubmit = () => {
+                            document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
+                            document.getElementById("submit").outerHTML = loading;
+                            document.getElementById("createForm").submit();
 
-                          // console.log(document.getElementById('description').value)
-                      }
-                  </script>
-                  <div id="submit">
-                      <button type="submit"
-                              onclick="handleSubmit()"
-                              class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                          Create Apartment
-                      </button>
-                  </div></div>
+                            // console.log(document.getElementById('description').value)
+                        }
+                    </script>
+                    <div id="submit">
+                        <button type="submit"
+                                onclick="handleSubmit()"
+                                class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Create Apartment
+                        </button>
+                    </div>
+                </div>
                 {{--                <button type="submit">--}}
                 {{--                </button>--}}
                 <br/>
