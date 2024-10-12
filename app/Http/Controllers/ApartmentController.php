@@ -69,7 +69,7 @@ class ApartmentController extends Controller
                 $path = $file->store('apartment_images', 'public');
                 $apartment_image = ApartmentImages::create([
                     "path" => $path,
-                    "product_id" => $apartment->id,
+                    "apartment_id" => $apartment->id,
                 ]);
             }
         });
