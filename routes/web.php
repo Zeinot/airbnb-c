@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ReservationController;
@@ -7,7 +8,18 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\PhotoController;
 use Illuminate\Support\Facades\Route;
 
+
+// =======
 Route::get('/', [ListingController::class, 'index'])->name('home');
+//Route::get('/redirect-back', function () {
+//    return back();
+//})->name("redirect-back");
+
+Route::get('/apartments', [ApartmentController::class, "index"])->name("apartments.index");
+Route::post('/apartments', [ApartmentController::class, "store"])->name("apartments.store");
+Route::get('/admin', [ApartmentController::class, "admin_index"])->name("apartments.admin_index");
+Route::get('/admin/apartments/create', [ApartmentController::class, "create"])->name("apartments.create");
+// >>>>>>> main
 
 
 Route::get('/n', function () {
