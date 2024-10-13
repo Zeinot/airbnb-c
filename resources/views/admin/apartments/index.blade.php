@@ -1,7 +1,7 @@
 @extends("layouts.custom.admin")
 @section("content")
-    @dump(\App\Models\Apartment::all())
-    @dump(\App\Models\Apartment::all()[0]->apartment_images[0])
+{{--    @dump(\App\Models\Apartment::all())--}}
+{{--    @dump(\App\Models\Apartment::all()[0]->apartment_images[0])--}}
     <div class="rounded-lg border-gray-300 dark:border-gray-600 mb-4">
         <div
             class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
@@ -116,7 +116,7 @@
                         <td onclick="window.location = `/`"
                             class="cursor-pointer font-medium text-gray-900 dark:text-white flex gap-3">
                             <img
-                                src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
+{{--                                src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"--}}
                                 class="w-auto h-8 mr-3 object-cover">
 
                             <div class="flex flex-col justify-center text-nowrap ">Apple iMac</div>
