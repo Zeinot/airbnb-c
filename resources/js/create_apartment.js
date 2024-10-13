@@ -7,6 +7,9 @@ const inputElement = document.querySelector('input[type="file"]');
 // Create a FilePond instance
 const pond = FilePond.create(inputElement, {
     required: true,
+    // server: {
+    //     restore: '/api/restore'
+    // },
     allowMultiple: true,
     storeAsFile: true,
     credits: false,
