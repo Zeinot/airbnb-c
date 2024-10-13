@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string("city");
             $table->string("address");
             $table->text("description");
+            $table->string("status")->nullable();
             $table->float("price");
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();

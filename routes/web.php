@@ -24,6 +24,9 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/apartments', [ApartmentController::class, "store"])->name("apartments.store");
+    Route::get('/admin/apartments/{apartment}/edit', [ApartmentController::class, "edit"])->name("apartments.edit");
+    Route::delete('/admin/apartments/{apartment}/', [ApartmentController::class, "destroy"])->name("apartments.destroy");
+    Route::get('/apartments/{apartment}/', [ApartmentController::class, "show"])->name("apartments.show");
     Route::get('/admin', [ApartmentController::class, "admin_index"])->name("apartments.admin_index");
     Route::get('/admin/apartments/create', [ApartmentController::class, "create"])->name("apartments.create");
 //  ------------------------ profile ----------------------------
@@ -61,4 +64,4 @@ Route::post('/photos', [PhotoController::class, 'store']);
 Route::put('/photos/{id}', [PhotoController::class, 'update']);
 Route::delete('/photos/{id}', [PhotoController::class, 'destroy']);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

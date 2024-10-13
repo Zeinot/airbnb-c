@@ -35,7 +35,7 @@ window.addEventListener('load', function() {
         // tip tap editor setup
         const editor = new Editor({
             element: document.querySelector('#wysiwyg-example'),
-            content: "{{old('description')}}",
+            // content: "{{old('description')}}",
             extensions: [
                 StarterKit,
                 Highlight,
