@@ -2,20 +2,15 @@
 @section("content")
     @dump(\App\Models\Apartment::all())
     @dump(\App\Models\Apartment::all()[0]->apartment_images[0])
-
-    <div
-        class="rounded-lg border-gray-300 dark:border-gray-600 mb-4"
-    >
+    <div class="rounded-lg border-gray-300 dark:border-gray-600 mb-4">
         <div
             class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <a href="{{ route('apartments.create') }}">
                 <button type="button"
-                        class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                        class="mb-4 text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
                     Create
                 </button>
             </a>
-
-
             <table id="filter-table">
                 <thead>
 
@@ -96,9 +91,8 @@
                 </tr>
                 </thead>
                 <tbody>
-
                 @for($x = 0; $x <= 100; $x++)
-                    <tr>
+                    <tr class="hover:bg-gray-100 dark:hover:bg-gray-700 ">
                         <td id="actions">
                             {{--                        <div class="">--}}
                             <div class="flex gap-3 max-w-fit">
@@ -119,25 +113,22 @@
 
                             {{--                        </div>--}}
                         </td>
-                        <td class="font-medium text-gray-900 dark:text-white flex gap-3">
+                        <td onclick="window.location = `/`"
+                            class="cursor-pointer font-medium text-gray-900 dark:text-white flex gap-3">
+                            <img
+                                src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
+                                class="w-auto h-8 mr-3 object-cover">
 
-
-                                    <img
-                                        src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
-                                        class="w-auto h-8 mr-3 object-cover">
-
-                                <div class="flex flex-col justify-center text-nowrap ">Apple iMac</div>
-
+                            <div class="flex flex-col justify-center text-nowrap ">Apple iMac</div>
                         </td>
-                        <td>Computers</td>
-                        <td>Apple</td>
-                        <td>$1,299</td>
-                        <td>50</td>
+                        <td onclick="window.location = `/`" class="cursor-pointer">Computers</td>
+                        <td onclick="window.location = `/`" class="cursor-pointer">Apple</td>
+                        <td onclick="window.location = `/`" class="cursor-pointer">$1,299</td>
+                        <td onclick="window.location = `/`" class="cursor-pointer">50</td>
                         <td>200</td>
                         <td>In Stock</td>
                     </tr>
                 @endfor
-
                 </tbody>
             </table>
             <style>
@@ -149,9 +140,6 @@
                 }
             </style>
             @vite("resources/js/admin_app.js")
-
-
         </div>
     </div>
-
 @endsection
