@@ -74,6 +74,7 @@ class ApartmentController extends Controller
                 ]);
             }
         });
+        return redirect(route("apartments.admin_index"));
     }
 
     /**
