@@ -1,8 +1,8 @@
 @extends("layouts.custom.admin")
 @section("content")
-@dump($apartments)
-{{--    @dump(\App\Models\Apartment::all())--}}
-{{--    @dump(\App\Models\Apartment::all()[0]->apartment_images[0])--}}
+    @dump($apartments)
+    {{--    @dump(\App\Models\Apartment::all())--}}
+    {{--    @dump(\App\Models\Apartment::all()[0]->apartment_images[0])--}}
     <div class="rounded-lg border-gray-300 dark:border-gray-600 mb-4">
         <div
             class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
@@ -59,41 +59,40 @@
                     </svg>
                 </span>
                     </th>
-{{--                    <th>--}}
-{{--                <span class="flex items-center">--}}
-{{--                    Stock--}}
-{{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
-{{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
-{{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
-{{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
-{{--                    </svg>--}}
-{{--                </span>--}}
-{{--                    </th>--}}
-{{--                    <th>--}}
-{{--                <span class="flex items-center">--}}
-{{--                    Total Sales--}}
-{{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
-{{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
-{{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
-{{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
-{{--                    </svg>--}}
-{{--                </span>--}}
-{{--                    </th>--}}
-{{--                    <th>--}}
-{{--                <span class="flex items-center">--}}
-{{--                    Status--}}
-{{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
-{{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
-{{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
-{{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
-{{--                    </svg>--}}
-{{--                </span>--}}
-{{--                    </th>--}}
+                    {{--                    <th>--}}
+                    {{--                <span class="flex items-center">--}}
+                    {{--                    Stock--}}
+                    {{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
+                    {{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
+                    {{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+                    {{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
+                    {{--                    </svg>--}}
+                    {{--                </span>--}}
+                    {{--                    </th>--}}
+                    {{--                    <th>--}}
+                    {{--                <span class="flex items-center">--}}
+                    {{--                    Total Sales--}}
+                    {{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
+                    {{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
+                    {{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+                    {{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
+                    {{--                    </svg>--}}
+                    {{--                </span>--}}
+                    {{--                    </th>--}}
+                    {{--                    <th>--}}
+                    {{--                <span class="flex items-center">--}}
+                    {{--                    Status--}}
+                    {{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
+                    {{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
+                    {{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+                    {{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
+                    {{--                    </svg>--}}
+                    {{--                </span>--}}
+                    {{--                    </th>--}}
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($apartments as $apartment)
-
 
                     <tr class="hover:bg-gray-100 dark:hover:bg-gray-700 ">
                         <td id="actions">
@@ -104,9 +103,7 @@
                                     {{--                                   href="{{route("products.edit", $product)}}"--}}
 
                                 >Edit</a>
-                                <form method="post"
-                                    {{--                                      action="{{route("products.destroy", $product)}}"--}}
-                                >
+                                <form method="post" action="{{route("apartments.destroy", ["apartment"=>$apartment])}}">
                                     @csrf
                                     @method("delete")
                                     <button class="text-red-600"
@@ -125,12 +122,15 @@
 
                             <div class="flex flex-col justify-center text-nowrap">{{$apartment->title}}</div>
                         </td>
-                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`" class="cursor-pointer">{{$apartment->type}}</td>
-                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`" class="cursor-pointer">${{$apartment->price}}</td>
-                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`" class="cursor-pointer">{{$apartment->city}}</td>
-{{--                        <td onclick="window.location = `/`" class="cursor-pointer">50</td>--}}
-{{--                        <td>200</td>--}}
-{{--                        <td>In Stock</td>--}}
+                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`"
+                            class="cursor-pointer">{{$apartment->type}}</td>
+                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`"
+                            class="cursor-pointer">${{$apartment->price}}</td>
+                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`"
+                            class="cursor-pointer">{{$apartment->city}}</td>
+                        {{--                        <td onclick="window.location = `/`" class="cursor-pointer">50</td>--}}
+                        {{--                        <td>200</td>--}}
+                        {{--                        <td>In Stock</td>--}}
                     </tr>
                 @endforeach
                 </tbody>

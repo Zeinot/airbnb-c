@@ -105,6 +105,6 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        //
+        dd("delete => ",$apartment);
     }
 }

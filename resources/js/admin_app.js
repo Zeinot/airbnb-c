@@ -8,8 +8,6 @@ if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable
                 return table
             }
             const tHead = table.childNodes[0]
-            // console.log(`${tHead.childNodes[0].childNodes[0].childNodes[0].childNodes[0].data}`.includes(`Actions`) )
-            // console.log(tHead.childNodes[0].childNodes[0].childNodes[0].childNodes[0].nodeName === "SPAN")
             const filterHeaders = {
                 nodeName: "TR",
                 attributes: {
@@ -17,29 +15,33 @@ if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable
                 },
                 childNodes: tHead.childNodes[0].childNodes.map(
                     (_th, index) => {
-                        // console.log(_th.childNodes[0].childNodes[0].data !== "Actions")
-                        if (tHead.childNodes[0].childNodes[0].childNodes[0].childNodes[0].nodeName !== "SPAN")
-                        return {
+
+                        if (index === 0)   return ({
                             nodeName: "TH",
-                                childNodes
-                        :
-                            [
+                            childNodes: [
                                 {
                                     nodeName: "INPUT",
                                     attributes: {
-                                        class: "datatable-input",
+                                        class: "datatable-input hidden",
                                         type: "search",
                                         "data-columns": "[" + index + "]"
                                     }
                                 }
                             ]
-                        }
-                        else return {
+                        })
+                        else return ({
                             nodeName: "TH",
-                            attributes: {
-                                class: "hidden",
-                            },
-                        }
+                            childNodes: [
+                                {
+                                    nodeName: "INPUT",
+                                    attributes: {
+                                        class: "datatable-input w-full",
+                                        type: "search",
+                                        "data-columns": "[" + index + "]"
+                                    }
+                                }
+                            ]
+                        })
                     }
                 )
             }
