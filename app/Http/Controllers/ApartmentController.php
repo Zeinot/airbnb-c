@@ -43,7 +43,7 @@ class ApartmentController extends Controller
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
             "city" => "required|min:3|max:50",
             "address" => "required|min:10|max:200",
-            "description" => "required|min:10|max:200",
+            "description" => "required|min:10|max:20000",
             "price" => "required|min:0.01",
 //            "images" => "required",
             'images.*' => 'image|mimes:jpg,jpeg,png,webp,svg|max:20048'
