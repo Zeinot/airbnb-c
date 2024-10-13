@@ -117,7 +117,7 @@
 
                             {{--                        </div>--}}
                         </td>
-                        <td onclick="window.location = `/`"
+                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`"
                             class="cursor-pointer font-medium text-gray-900 dark:text-white flex gap-3">
                             <img
                                 src="{{Storage::disk('public')->url($apartment->apartment_images[0]->path) }}"
@@ -125,9 +125,9 @@
 
                             <div class="flex flex-col justify-center text-nowrap">{{$apartment->title}}</div>
                         </td>
-                        <td onclick="window.location = `/`" class="cursor-pointer">{{$apartment->type}}</td>
-                        <td onclick="window.location = `/`" class="cursor-pointer">${{$apartment->price}}</td>
-                        <td onclick="window.location = `/`" class="cursor-pointer">{{$apartment->city}}</td>
+                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`" class="cursor-pointer">{{$apartment->type}}</td>
+                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`" class="cursor-pointer">${{$apartment->price}}</td>
+                        <td onclick="window.location = `{{route('apartments.show', $apartment)}}`" class="cursor-pointer">{{$apartment->city}}</td>
 {{--                        <td onclick="window.location = `/`" class="cursor-pointer">50</td>--}}
 {{--                        <td>200</td>--}}
 {{--                        <td>In Stock</td>--}}
