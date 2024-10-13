@@ -1,6 +1,7 @@
 @extends("layouts.custom.admin")
 @section("content")
     @vite("resources/js/create_apartment.js")
+
     @if($errors->all())
         <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
              role="alert">
@@ -38,7 +39,7 @@
                 <div>
                     <label for="title"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                    <input type="text" name="title" id="title"
+                    <input type="text" name="title" id="title" value="{{old('title')}}"
                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                            placeholder="Title ..."
                     />
@@ -50,7 +51,7 @@
                     <div>
                         <label for="city"
                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
-                        <input type="text" name="city" id="city"
+                        <input type="text" name="city" id="city" value="{{old('city')}}"
                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                placeholder="City ..."
                         />
@@ -63,6 +64,7 @@
                     <div>
                         <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
                         <input type="text" name="address" id="address" placeholder="Address ..."
+                               value="{{old('address')}}"
                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
 
                         />
@@ -73,7 +75,7 @@
                     <div>
                         <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price
                             ($)</label>
-                        <input type="number" name="price" id="price"
+                        <input type="number" name="price" id="price" value="{{old('price')}}"
                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                placeholder="$2999"
                         >
@@ -86,14 +88,12 @@
                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
                         <select id="type"
                                 name="type"
-
-
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option selected disabled>Select</option>
-                            <option value="Daily">Daily</option>
-                            <option value="Weekly">Weekly</option>
-                            <option value="Monthly">Monthly</option>
-                            <option value="Yearly">Yearly</option>
+                            <option @if(!old('type')) selected @endif  disabled>Select</option>
+                            <option value="Daily" @if(old('type') === "Daily") selected @endif>Daily</option>
+                            <option value="Weekly" @if(old('type') === "Weekly") selected @endif>Weekly</option>
+                            <option value="Monthly" @if(old('type') === "Monthly") selected @endif>Monthly</option>
+                            <option value="Yearly" @if(old('type') === "Yearly") selected @endif>Yearly</option>
                         </select>
                         {{--                        <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>--}}
                         {{--                            Username already taken!--}}
@@ -112,6 +112,7 @@
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                     <input
                         id="description" name="description" hidden/>
+
                     <div
                         class="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
                         <div class="px-3 py-2 border-b dark:border-gray-600">
@@ -789,12 +790,27 @@
                 </div>
 
                 <div class="flex gap-3">
-                    <a  href="{{ route('apartments.admin_index') }}"
-                            class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    <a href="{{ route('apartments.admin_index') }}"
+                       class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Cancel
                     </a>
-                    <script>
-                        const loading = `<button disabled type="button"
+
+                    <div id="submit">
+                        <button type="submit"
+                                onclick="handleSubmit()"
+                                class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                            Create Apartment
+                        </button>
+{{--                        <button type="submit"></button>--}}
+                    </div>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+    <script>
+        alert("hello")
+        const loading = `<button disabled type="button"
                         class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center">
                     <svg aria-hidden="true" role="status" class="inline w-4 h-4 me-3 text-white animate-spin"
                          viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -807,27 +823,21 @@
                     </svg>
                     Loading...
                 </button>`
-                        const handleSubmit = () => {
-                            document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
-                            document.getElementById("submit").outerHTML = loading;
-                            document.getElementById("createForm").submit();
+        document.querySelector('.tiptap').setContent("TEST");
+        console.log(document.querySelector('.tiptap'))
+        document.querySelector('.tiptap')
+        {{--document.querySelector('.tiptap').content = "{{old("description")}}";--}}
+        {{--console.log( document.querySelector('.tiptap').content,  document.querySelector('.tiptap'))--}}
+        const handleSubmit = () => {
+            document.querySelector('.tiptap').innerHTML = "TEST";
+            {{--document.querySelector('.tiptap').innerHTML = "{{old("description")}}";--}}
 
-                            // console.log(document.getElementById('description').value)
-                        }
-                    </script>
-                    <div id="submit">
-                        <button type="submit"
-                                onclick="handleSubmit()"
-                                class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                            Create Apartment
-                        </button>
-                    </div>
-                </div>
-                {{--                <button type="submit">--}}
-                {{--                </button>--}}
-                <br/>
+            console.log( document.querySelector('.tiptap').innerHTML,  document.querySelector('.tiptap'))
+            document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
+            document.getElementById("submit").outerHTML = loading;
+            // document.getElementById("createForm").submit();
 
-            </form>
-        </div>
-    </div>
+            // console.log(document.getElementById('description').value)
+        }
+    </script>
 @endsection
