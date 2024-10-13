@@ -16,9 +16,9 @@ return new class extends Migration {
             $table->string("type");
             $table->string("city");
             $table->string("address");
-            $table->integer("price_per_day");
-//            need to add table booking later
-//            $table->foreignId("booking_id");
+            $table->text("description");
+            $table->float("price");
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

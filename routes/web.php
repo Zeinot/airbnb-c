@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home-page');
 });
+//Route::get('/redirect-back', function () {
+//    return back();
+//})->name("redirect-back");
 
 Route::get('/apartments', [ApartmentController::class, "index"])->name("apartments.index");
+Route::post('/apartments', [ApartmentController::class, "store"])->name("apartments.store");
 Route::get('/admin', [ApartmentController::class, "admin_index"])->name("apartments.admin_index");
 Route::get('/admin/apartments/create', [ApartmentController::class, "create"])->name("apartments.create");
 
