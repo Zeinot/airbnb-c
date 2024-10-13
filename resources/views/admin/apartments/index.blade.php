@@ -20,9 +20,7 @@
                 <thead>
 
                 <tr>
-                    <th ><span class="hidden">
-
-                        Actions
+                    <th><span class="hidden">
                         </span>
                     </th>
                     <th>
@@ -99,11 +97,13 @@
                 </thead>
                 <tbody>
                 @for($x = 0; $x <= 100; $x++)
-                <tr>
+                    <tr>
 
-           <td>
-{{--                        <div class="">--}}
-                            <div class="flex gap-3">
+                        <td class="max-w-fit bg-red-500" style="flex-grow: 1;
+      flex-basis: 0;
+      width: fit-content;">
+                            {{--                        <div class="">--}}
+                            <div class="flex gap-3 bg-amber-600 max-w-fit">
                                 <a class="text-primary-600"
                                     {{--                                   href="{{route("products.edit", $product)}}"--}}
 
@@ -119,25 +119,25 @@
                                 </form>
                             </div>
 
-{{--                        </div>--}}
-                  </td>
-                    <td class="font-medium text-gray-900 dark:text-white flex gap-3">
+                            {{--                        </div>--}}
+                        </td>
+                        <td class="font-medium text-gray-900 dark:text-white flex gap-3">
 
-                       <div class="flex gap-3">
+                            <div class="flex gap-3">
 
-                           <div class="flex flex-col justify-center">  <img
-                                   src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
-                                   class="w-auto h-8 mr-3"></div>
-                           <div class="flex flex-col justify-center">Apple iMac</div>
-                       </div>
-                    </td>
-                    <td>Computers</td>
-                    <td>Apple</td>
-                    <td>$1,299</td>
-                    <td>50</td>
-                    <td>200</td>
-                    <td>In Stock</td>
-                </tr>
+                                <div class="flex flex-col justify-center"><img
+                                        src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
+                                        class="w-auto h-8 mr-3"></div>
+                                <div class="flex flex-col justify-center text-nowrap">Apple iMac</div>
+                            </div>
+                        </td>
+                        <td>Computers</td>
+                        <td>Apple</td>
+                        <td>$1,299</td>
+                        <td>50</td>
+                        <td>200</td>
+                        <td>In Stock</td>
+                    </tr>
                 @endfor
 
                 </tbody>
