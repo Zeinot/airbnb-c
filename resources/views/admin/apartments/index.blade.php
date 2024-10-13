@@ -21,7 +21,7 @@
                     </th>
                     <th>
                 <span class="flex items-center">
-                    Name
+                    Title
                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                          height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,17 +31,7 @@
                     </th>
                     <th>
                 <span class="flex items-center">
-                    Category
-                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                         height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>
-                    </svg>
-                </span>
-                    </th>
-                    <th>
-                <span class="flex items-center">
-                    Brand
+                    Type
                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                          height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -61,7 +51,7 @@
                     </th>
                     <th>
                 <span class="flex items-center">
-                    Stock
+                    City
                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                          height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -69,35 +59,48 @@
                     </svg>
                 </span>
                     </th>
-                    <th>
-                <span class="flex items-center">
-                    Total Sales
-                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                         height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>
-                    </svg>
-                </span>
-                    </th>
-                    <th>
-                <span class="flex items-center">
-                    Status
-                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                         height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>
-                    </svg>
-                </span>
-                    </th>
+{{--                    <th>--}}
+{{--                <span class="flex items-center">--}}
+{{--                    Stock--}}
+{{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
+{{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
+{{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+{{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
+{{--                    </svg>--}}
+{{--                </span>--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                <span class="flex items-center">--}}
+{{--                    Total Sales--}}
+{{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
+{{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
+{{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+{{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
+{{--                    </svg>--}}
+{{--                </span>--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                <span class="flex items-center">--}}
+{{--                    Status--}}
+{{--                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"--}}
+{{--                         height="24" fill="none" viewBox="0 0 24 24">--}}
+{{--                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"--}}
+{{--                              d="m8 15 4 4 4-4m0-6-4-4-4 4"/>--}}
+{{--                    </svg>--}}
+{{--                </span>--}}
+{{--                    </th>--}}
                 </tr>
                 </thead>
                 <tbody>
-                @for($x = 0; $x <= 100; $x++)
+                @foreach($apartments as $apartment)
+
+
                     <tr class="hover:bg-gray-100 dark:hover:bg-gray-700 ">
                         <td id="actions">
                             {{--                        <div class="">--}}
                             <div class="flex gap-3 max-w-fit">
                                 <a class="text-primary-600"
+                                   href="{{ route('apartments.edit', ["apartment" => $apartment]) }}"
                                     {{--                                   href="{{route("products.edit", $product)}}"--}}
 
                                 >Edit</a>
@@ -117,19 +120,19 @@
                         <td onclick="window.location = `/`"
                             class="cursor-pointer font-medium text-gray-900 dark:text-white flex gap-3">
                             <img
-                                src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
+                                src="{{Storage::disk('public')->url($apartment->apartment_images[0]->path) }}"
                                 class="w-auto h-8 mr-3 object-cover">
 
-                            <div class="flex flex-col justify-center text-nowrap ">Apple iMac</div>
+                            <div class="flex flex-col justify-center text-nowrap ">{{$apartment->title}}</div>
                         </td>
-                        <td onclick="window.location = `/`" class="cursor-pointer">Computers</td>
-                        <td onclick="window.location = `/`" class="cursor-pointer">Apple</td>
-                        <td onclick="window.location = `/`" class="cursor-pointer">$1,299</td>
-                        <td onclick="window.location = `/`" class="cursor-pointer">50</td>
-                        <td>200</td>
-                        <td>In Stock</td>
+                        <td onclick="window.location = `/`" class="cursor-pointer">{{$apartment->type}}</td>
+                        <td onclick="window.location = `/`" class="cursor-pointer">${{$apartment->price}}</td>
+                        <td onclick="window.location = `/`" class="cursor-pointer">{{$apartment->city}}</td>
+{{--                        <td onclick="window.location = `/`" class="cursor-pointer">50</td>--}}
+{{--                        <td>200</td>--}}
+{{--                        <td>In Stock</td>--}}
                     </tr>
-                @endfor
+                @endforeach
                 </tbody>
             </table>
             <style>

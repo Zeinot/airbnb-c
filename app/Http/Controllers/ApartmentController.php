@@ -89,7 +89,7 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        //
+        return view("admin.apartments.edit", ["apartment" => $apartment]);
     }
 
     /**

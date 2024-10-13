@@ -24,6 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/apartments', [ApartmentController::class, "store"])->name("apartments.store");
+    Route::get('admin/apartments/{apartment}/edit', [ApartmentController::class, "edit"])->name("apartments.edit");
     Route::get('/admin', [ApartmentController::class, "admin_index"])->name("apartments.admin_index");
     Route::get('/admin/apartments/create', [ApartmentController::class, "create"])->name("apartments.create");
 //  ------------------------ profile ----------------------------
