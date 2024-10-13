@@ -8,7 +8,7 @@
             <svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true"
                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path
-                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                        d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
             </svg>
             <span class="sr-only">Danger</span>
             <div>
@@ -31,7 +31,7 @@
     @endif
     <div class="rounded-lg border-gray-300 dark:border-gray-600 mb-4">
         <div
-            class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form id="createForm" class="space-y-6" method="POST" action="{{route("apartments.store")}}"
                   enctype="multipart/form-data">
                 @csrf
@@ -104,17 +104,17 @@
                     <label for="images"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photos</label>
                     <input
-                        id="images" name="images[]" type="file"
-                        multiple/>
+                            id="images" name="images[]" type="file"
+                            multiple/>
                 </div>
                 <div>
                     <label for="editor"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                     <input
-                        id="description" name="description" hidden/>
+                            id="description" name="description" hidden/>
 
                     <div
-                        class="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+                            class="w-full border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
                         <div class="px-3 py-2 border-b dark:border-gray-600">
                             <div class="flex flex-wrap items-center">
                                 <div class="flex items-center space-x-1 rtl:space-x-reverse flex-wrap">
@@ -312,7 +312,7 @@
                                     <div id="textColorDropdown"
                                          class="z-10 hidden w-48 rounded bg-white p-2 shadow dark:bg-gray-700">
                                         <div
-                                            class="grid grid-cols-6 gap-2 group mb-3 items-center p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                class="grid grid-cols-6 gap-2 group mb-3 items-center p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600">
                                             <input type="color" id="color" value="#e66465"
                                                    class="border-gray-200 border bg-gray-50 dark:bg-gray-700 dark:border-gray-600 rounded-md p-px px-1 hover:bg-gray-50 group-hover:bg-gray-50 dark:group-hover:bg-gray-700 w-full h-8 col-span-3"/>
                                             <label for="color"
@@ -322,112 +322,112 @@
                                         <div class="grid grid-cols-6 gap-1 mb-3">
                                             <button type="button" data-hex-color="#1A56DB"
                                                     style="background-color: #1A56DB" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Blue</span></button>
+                                                        class="sr-only">Blue</span></button>
                                             <button type="button" data-hex-color="#0E9F6E"
                                                     style="background-color: #0E9F6E" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Green</span></button>
+                                                        class="sr-only">Green</span></button>
                                             <button type="button" data-hex-color="#FACA15"
                                                     style="background-color: #FACA15" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Yellow</span></button>
+                                                        class="sr-only">Yellow</span></button>
                                             <button type="button" data-hex-color="#F05252"
                                                     style="background-color: #F05252" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Red</span></button>
+                                                        class="sr-only">Red</span></button>
                                             <button type="button" data-hex-color="#FF8A4C"
                                                     style="background-color: #FF8A4C" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Orange</span></button>
+                                                        class="sr-only">Orange</span></button>
                                             <button type="button" data-hex-color="#0694A2"
                                                     style="background-color: #0694A2" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Teal</span></button>
+                                                        class="sr-only">Teal</span></button>
                                             <button type="button" data-hex-color="#B4C6FC"
                                                     style="background-color: #B4C6FC" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light indigo</span></button>
+                                                        class="sr-only">Light indigo</span></button>
                                             <button type="button" data-hex-color="#8DA2FB"
                                                     style="background-color: #8DA2FB" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Indigo</span></button>
+                                                        class="sr-only">Indigo</span></button>
                                             <button type="button" data-hex-color="#5145CD"
                                                     style="background-color: #5145CD" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Purple</span></button>
+                                                        class="sr-only">Purple</span></button>
                                             <button type="button" data-hex-color="#771D1D"
                                                     style="background-color: #771D1D" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Brown</span></button>
+                                                        class="sr-only">Brown</span></button>
                                             <button type="button" data-hex-color="#FCD9BD"
                                                     style="background-color: #FCD9BD" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light orange</span></button>
+                                                        class="sr-only">Light orange</span></button>
                                             <button type="button" data-hex-color="#99154B"
                                                     style="background-color: #99154B" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Bordo</span></button>
+                                                        class="sr-only">Bordo</span></button>
                                             <button type="button" data-hex-color="#7E3AF2"
                                                     style="background-color: #7E3AF2" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Dark Purple</span></button>
+                                                        class="sr-only">Dark Purple</span></button>
                                             <button type="button" data-hex-color="#CABFFD"
                                                     style="background-color: #CABFFD" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light</span></button>
+                                                        class="sr-only">Light</span></button>
                                             <button type="button" data-hex-color="#D61F69"
                                                     style="background-color: #D61F69" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Dark Pink</span></button>
+                                                        class="sr-only">Dark Pink</span></button>
                                             <button type="button" data-hex-color="#F8B4D9"
                                                     style="background-color: #F8B4D9" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Pink</span></button>
+                                                        class="sr-only">Pink</span></button>
                                             <button type="button" data-hex-color="#F6C196"
                                                     style="background-color: #F6C196" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Cream</span></button>
+                                                        class="sr-only">Cream</span></button>
                                             <button type="button" data-hex-color="#A4CAFE"
                                                     style="background-color: #A4CAFE" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light Blue</span></button>
+                                                        class="sr-only">Light Blue</span></button>
                                             <button type="button" data-hex-color="#5145CD"
                                                     style="background-color: #5145CD" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Dark Blue</span></button>
+                                                        class="sr-only">Dark Blue</span></button>
                                             <button type="button" data-hex-color="#B43403"
                                                     style="background-color: #B43403" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Orange Brown</span></button>
+                                                        class="sr-only">Orange Brown</span></button>
                                             <button type="button" data-hex-color="#FCE96A"
                                                     style="background-color: #FCE96A" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light Yellow</span></button>
+                                                        class="sr-only">Light Yellow</span></button>
                                             <button type="button" data-hex-color="#1E429F"
                                                     style="background-color: #1E429F" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Navy Blue</span></button>
+                                                        class="sr-only">Navy Blue</span></button>
                                             <button type="button" data-hex-color="#768FFD"
                                                     style="background-color: #768FFD" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light Purple</span></button>
+                                                        class="sr-only">Light Purple</span></button>
                                             <button type="button" data-hex-color="#BCF0DA"
                                                     style="background-color: #BCF0DA" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light Green</span></button>
+                                                        class="sr-only">Light Green</span></button>
                                             <button type="button" data-hex-color="#EBF5FF"
                                                     style="background-color: #EBF5FF" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Sky Blue</span></button>
+                                                        class="sr-only">Sky Blue</span></button>
                                             <button type="button" data-hex-color="#16BDCA"
                                                     style="background-color: #16BDCA" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Cyan</span></button>
+                                                        class="sr-only">Cyan</span></button>
                                             <button type="button" data-hex-color="#E74694"
                                                     style="background-color: #E74694" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Pink</span></button>
+                                                        class="sr-only">Pink</span></button>
                                             <button type="button" data-hex-color="#83B0ED"
                                                     style="background-color: #83B0ED" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Darker Sky Blue</span></button>
+                                                        class="sr-only">Darker Sky Blue</span></button>
                                             <button type="button" data-hex-color="#03543F"
                                                     style="background-color: #03543F" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Forest Green</span></button>
+                                                        class="sr-only">Forest Green</span></button>
                                             <button type="button" data-hex-color="#111928"
                                                     style="background-color: #111928" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Black</span></button>
+                                                        class="sr-only">Black</span></button>
                                             <button type="button" data-hex-color="#4B5563"
                                                     style="background-color: #4B5563" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Stone</span></button>
+                                                        class="sr-only">Stone</span></button>
                                             <button type="button" data-hex-color="#6B7280"
                                                     style="background-color: #6B7280" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Gray</span></button>
+                                                        class="sr-only">Gray</span></button>
                                             <button type="button" data-hex-color="#D1D5DB"
                                                     style="background-color: #D1D5DB" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Light Gray</span></button>
+                                                        class="sr-only">Light Gray</span></button>
                                             <button type="button" data-hex-color="#F3F4F6"
                                                     style="background-color: #F3F4F6" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Cloud Gray</span></button>
+                                                        class="sr-only">Cloud Gray</span></button>
                                             <button type="button" data-hex-color="#F3F4F6"
                                                     style="background-color: #F3F4F6" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Cloud Gray</span></button>
+                                                        class="sr-only">Cloud Gray</span></button>
                                             <button type="button" data-hex-color="#F9FAFB"
                                                     style="background-color: #F9FAFB" class="w-6 h-6 rounded-md"><span
-                                                    class="sr-only">Heaven Gray</span></button>
+                                                        class="sr-only">Heaven Gray</span></button>
                                         </div>
                                         <button type="button" id="reset-color"
                                                 class="py-1.5 text-sm font-medium text-gray-500 focus:outline-none bg-white rounded-lg hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-700 dark:text-gray-400 dark:hover:text-white w-full dark:hover:bg-gray-600">
@@ -587,11 +587,11 @@
                                                 Paragraph
                                                 <div class="space-x-1.5">
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">0</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">0</kbd>
                                                 </div>
                                             </button>
                                         </li>
@@ -601,11 +601,11 @@
                                                 Heading 1
                                                 <div class="space-x-1.5">
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">1</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">1</kbd>
                                                 </div>
                                             </button>
                                         </li>
@@ -615,11 +615,11 @@
                                                 Heading 2
                                                 <div class="space-x-1.5">
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">2</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">2</kbd>
                                                 </div>
                                             </button>
                                         </li>
@@ -629,11 +629,11 @@
                                                 Heading 3
                                                 <div class="space-x-1.5">
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">3</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">3</kbd>
                                                 </div>
                                             </button>
                                         </li>
@@ -643,11 +643,11 @@
                                                 Heading 4
                                                 <div class="space-x-1.5">
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">4</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">4</kbd>
                                                 </div>
                                             </button>
                                         </li>
@@ -657,11 +657,11 @@
                                                 Heading 5
                                                 <div class="space-x-1.5">
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">5</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">5</kbd>
                                                 </div>
                                             </button>
                                         </li>
@@ -671,11 +671,11 @@
                                                 Heading 6
                                                 <div class="space-x-1.5">
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Cmd</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">Alt</kbd>
                                                     <kbd
-                                                        class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">6</kbd>
+                                                            class="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-400 dark:border-gray-500">6</kbd>
                                                 </div>
                                             </button>
                                         </li>
@@ -801,14 +801,14 @@
                                 class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                             Create Apartment
                         </button>
-{{--                        <button type="submit"></button>--}}
+                        {{--                        <button type="submit"></button>--}}
                     </div>
                 </div>
                 <br/>
             </form>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
         alert("hello")
         const loading = `<button disabled type="button"
                         class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 inline-flex items-center">
@@ -823,19 +823,22 @@
                     </svg>
                     Loading...
                 </button>`
-        document.querySelector('.tiptap').setContent("TEST");
+        document.addEventListener('wysiwyg-loaded', () => {
+            alert("EVENT")
+            document.querySelector('.tiptap').innerHTML = "{!! old("description")!!}"
+        });
         console.log(document.querySelector('.tiptap'))
         document.querySelector('.tiptap')
         {{--document.querySelector('.tiptap').content = "{{old("description")}}";--}}
         {{--console.log( document.querySelector('.tiptap').content,  document.querySelector('.tiptap'))--}}
         const handleSubmit = () => {
-            document.querySelector('.tiptap').innerHTML = "TEST";
+            // document.querySelector('.tiptap').innerHTML = "TEST";
             {{--document.querySelector('.tiptap').innerHTML = "{{old("description")}}";--}}
 
             console.log( document.querySelector('.tiptap').innerHTML,  document.querySelector('.tiptap'))
             document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
             document.getElementById("submit").outerHTML = loading;
-            // document.getElementById("createForm").submit();
+            document.getElementById("createForm").submit();
 
             // console.log(document.getElementById('description').value)
         }
