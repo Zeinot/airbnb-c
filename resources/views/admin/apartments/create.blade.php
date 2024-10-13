@@ -1,6 +1,7 @@
 @extends("layouts.custom.admin")
 @section("content")
     @vite("resources/js/create_apartment.js")
+{{--    @dump(auth()->user()->id)--}}
     @if($errors->all())
         <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
              role="alert">

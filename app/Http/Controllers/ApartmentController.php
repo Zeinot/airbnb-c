@@ -21,7 +21,7 @@ class ApartmentController extends Controller
     public function admin_index()
     {
 //        dump(Apartment::all());
-        return view("admin.apartments.index");
+        return view("admin.apartments.index", ["apartments" => Apartment::where("user_id", auth()->user()->id)->get()]);
     }
 
     /**
@@ -37,7 +37,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-//        dd(request()->all());
+        dump(request()->all());
         $request->validate([
             "title" => "required|min:25|max:200",
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
@@ -61,6 +61,7 @@ class ApartmentController extends Controller
                 "type" => $request->type,
                 "city" => $request->city,
                 "address" => $request->address,
+                "description" => $request->description,
                 "price" => $request->price,
                 "user_id" => auth()->user()->id,
             ]);
