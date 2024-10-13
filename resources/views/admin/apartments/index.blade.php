@@ -123,7 +123,7 @@
                                 src="{{Storage::disk('public')->url($apartment->apartment_images[0]->path) }}"
                                 class="w-auto h-8 mr-3 object-cover">
 
-                            <div class="flex flex-col justify-center text-nowrap ">{{$apartment->title}}</div>
+                            <div class="flex flex-col justify-center text-nowrap">{{$apartment->title}}</div>
                         </td>
                         <td onclick="window.location = `/`" class="cursor-pointer">{{$apartment->type}}</td>
                         <td onclick="window.location = `/`" class="cursor-pointer">${{$apartment->price}}</td>
