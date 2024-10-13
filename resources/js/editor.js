@@ -186,4 +186,6 @@ window.addEventListener('load', function() {
             });
         });
     }
+    const event = new Event("wysiwyg-loaded");
+    document.dispatchEvent(event);
 })
