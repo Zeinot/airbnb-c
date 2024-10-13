@@ -11,3 +11,7 @@ https://flowbite.com/blocks/e-commerce/product-overview/#product-with-image-gall
 https://flowbite.com/blocks/e-commerce/product-cards/#default-list-of-product-cards
 
 https://flowbite.com/docs/forms/search-input/#voice-search
+
+https://flowbite.com/docs/components/modal/#form-element
+
+https://flowbite.com/docs/components/modal/#default-modal
