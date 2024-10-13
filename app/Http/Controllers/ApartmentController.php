@@ -81,7 +81,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        //
+        return view("apartments.show", ["apartment" => $apartment]);
     }
 
     /**
