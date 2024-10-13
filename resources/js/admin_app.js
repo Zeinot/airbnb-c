@@ -39,18 +39,6 @@ if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable
                             attributes: {
                                 class: "hidden",
                             },
-                            childNodes
-                                :
-                                [
-                                    {
-                                        nodeName: "INPUT",
-                                        attributes: {
-                                            class: "hidden",
-                                            type: "search",
-                                            "data-columns": "[" + index + "]"
-                                        }
-                                    }
-                                ]
                         }
                     }
                 )
