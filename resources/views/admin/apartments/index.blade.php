@@ -96,14 +96,12 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 @for($x = 0; $x <= 100; $x++)
                     <tr>
-
-                        <td class="max-w-fit bg-red-500" style="flex-grow: 1;
-      flex-basis: 0;
-      width: fit-content;">
+                        <td id="actions">
                             {{--                        <div class="">--}}
-                            <div class="flex gap-3 bg-amber-600 max-w-fit">
+                            <div class="flex gap-3 max-w-fit">
                                 <a class="text-primary-600"
                                     {{--                                   href="{{route("products.edit", $product)}}"--}}
 
@@ -123,13 +121,13 @@
                         </td>
                         <td class="font-medium text-gray-900 dark:text-white flex gap-3">
 
-                            <div class="flex gap-3">
 
-                                <div class="flex flex-col justify-center"><img
+                                    <img
                                         src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
-                                        class="w-auto h-8 mr-3"></div>
-                                <div class="flex flex-col justify-center text-nowrap">Apple iMac</div>
-                            </div>
+                                        class="w-auto h-8 mr-3 object-cover">
+
+                                <div class="flex flex-col justify-center text-nowrap ">Apple iMac</div>
+
                         </td>
                         <td>Computers</td>
                         <td>Apple</td>
@@ -142,7 +140,14 @@
 
                 </tbody>
             </table>
-
+            <style>
+                @media (min-width: 640px) {
+                    #actions {
+                        width: 75px !important;
+                        /*@apply bg-amber-600*/
+                    }
+                }
+            </style>
             @vite("resources/js/admin_app.js")
 
 
