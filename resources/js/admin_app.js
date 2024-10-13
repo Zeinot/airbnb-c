@@ -36,6 +36,9 @@ if (document.getElementById("filter-table") && typeof simpleDatatables.DataTable
                         }
                         else return {
                             nodeName: "TH",
+                            attributes: {
+                                class: "hidden",
+                            },
                             childNodes
                                 :
                                 [
