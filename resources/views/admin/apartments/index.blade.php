@@ -101,13 +101,33 @@
                 @for($x = 0; $x <= 100; $x++)
                 <tr>
 
-                    <td>Computers</td>
+           <td>
+{{--                        <div class="">--}}
+                            <div class="flex gap-3">
+                                <a class="text-primary-600"
+                                    {{--                                   href="{{route("products.edit", $product)}}"--}}
+
+                                >Edit</a>
+                                <form method="post"
+                                    {{--                                      action="{{route("products.destroy", $product)}}"--}}
+                                >
+                                    @csrf
+                                    @method("delete")
+                                    <button class="text-red-600"
+                                    >Delete
+                                    </button>
+                                </form>
+                            </div>
+
+{{--                        </div>--}}
+                  </td>
                     <td class="font-medium text-gray-900 dark:text-white flex gap-3">
 
                        <div class="flex gap-3">
-                           <img
-                               src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
-                               class="w-auto h-8 mr-3">
+
+                           <div class="flex flex-col justify-center">  <img
+                                   src="{{Storage::disk('public')->url(\App\Models\Apartment::all()[0]->apartment_images[0]->path) }}"
+                                   class="w-auto h-8 mr-3"></div>
                            <div class="flex flex-col justify-center">Apple iMac</div>
                        </div>
                     </td>
