@@ -797,9 +797,15 @@
                             fill="currentColor"/>
                     </svg>
                     Loading...
-                </button>`
+                </button>`;
+        alert('test');
         document.addEventListener('wysiwyg-loaded', () => {
-            document.querySelector('.tiptap').innerHTML = "{!! old("description")!!}"
+            alert("hello")
+            const description = `{!!old("description")!!}` || `{!! $apartment->description!!}`;
+            console.log(description)
+            document.querySelector('.tiptap').innerHTML = description
+        {{--           "{!! old("description")!!}" ||          --}}
+
         });
         console.log(document.querySelector('.tiptap'))
         document.querySelector('.tiptap')
