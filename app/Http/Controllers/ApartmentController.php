@@ -114,7 +114,7 @@ class ApartmentController extends Controller
         DB::transaction(function () use ($apartment, $apartment_images) {
             foreach ($apartment_images as $apartment_image){
 //                Storage::delete($apartment_image->path);
-
+            dd($apartment_image->path);
                 $apartment_image->delete();
             }
             $apartment->delete();
