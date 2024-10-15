@@ -110,7 +110,6 @@ class ApartmentController extends Controller
 
         $apartment_images = $apartment->apartment_images;
 
-
         DB::transaction(function () use ($apartment, $apartment_images) {
             foreach ($apartment_images as $apartment_image) {
                 Storage::disk('public')->delete($apartment_image->path);
