@@ -15,6 +15,10 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import 'filepond/dist/filepond.min.css';
 // Import the plugin styles
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
+import '@pqina/pintura/pintura.css';
+import { openDefaultEditor } from '@pqina/pintura';
+
+
 import "./editor.js"
 // Get a reference to the file input element
 const inputElement = document.querySelector('input[type="file"]');
