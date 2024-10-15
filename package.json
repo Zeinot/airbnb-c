@@ -21,6 +21,9 @@
         "@tiptap/pm": "^2.8.0",
         "@tiptap/starter-kit": "^2.8.0",
         "filepond": "^4.31.4",
+        "filepond-plugin-image-edit": "^1.6.3",
+        "filepond-plugin-image-exif-orientation": "^1.0.11",
+        "filepond-plugin-image-preview": "^4.6.12",
         "flowbite-typography": "^1.0.4",
         "simple-datatables": "^9.2.1"
     },

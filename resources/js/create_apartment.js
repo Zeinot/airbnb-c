@@ -1,9 +1,29 @@
 import * as FilePond from 'filepond';
+
+// Import the plugin code
+import FilePondPluginImageEdit from 'filepond-plugin-image-edit';
+// Import the plugin styles
+import 'filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css';
+// Import the plugin code
+import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
+// Import the plugin code
+// Import the plugin styles
+import 'filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css';
+// Import the plugin code
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+
 import 'filepond/dist/filepond.min.css';
+// Import the plugin styles
+import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 import "./editor.js"
 // Get a reference to the file input element
 const inputElement = document.querySelector('input[type="file"]');
-
+FilePond.registerPlugin(
+    FilePondPluginImagePreview,
+    FilePondPluginImageExifOrientation,
+    //FilePondPluginFileValidateSize,
+    FilePondPluginImageEdit
+);
 // Create a FilePond instance
 const pond = FilePond.create(inputElement, {
     required: true,
