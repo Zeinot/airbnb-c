@@ -6,6 +6,7 @@ use App\Models\Apartment;
 use App\Models\ApartmentImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
@@ -106,6 +107,20 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        dd("delete => ",$apartment);
+//        dd("delete => ",$apartment);
+        $apartment_images = $apartment->apartment_images;
+//        dump($files);
+
+        DB::transaction(function () use ($apartment, $apartment_images) {
+            foreach ($apartment_images as $apartment_image){
+//                Storage::delete($apartment_image->path);
+
+                $apartment_image->delete();
+            }
+            $apartment->delete();
+            dump("success");
+        });
+
+//        return redirect(route("apartments.admin_index"));
     }
 }
