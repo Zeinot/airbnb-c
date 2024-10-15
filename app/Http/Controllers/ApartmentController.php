@@ -99,6 +99,22 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+        $request->validate([
+            "title" => "required|min:25|max:200",
+            "type" => "required|in:Daily,Weekly,Monthly,Yearly",
+            "city" => "required|min:3|max:50",
+            "address" => "required|min:10|max:200",
+            "description" => "required|min:10|max:20000",
+            "price" => "required|min:0.01",
+            "images" => "required",
+            'images.*' => 'image|mimes:jpg,jpeg,png,webp,svg|max:20048'
+
+        ], [
+            "images.required" => "Please upload Images",
+            "images.*.image" => "The files must be images",
+            "images.*.mimes" => "Images must be jpg,jpeg,png,webp",
+            "images.*.max" => "Images too large",
+        ]);
         dd($request->all(),
             $apartment);
     }

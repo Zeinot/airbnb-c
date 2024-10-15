@@ -66,11 +66,18 @@
                         <select id="type"
                                 name="type"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option @if(!old('type')) selected @endif  disabled>Select</option>
+                            <option @if(!old('type') && !isset($apartment->type)    ) selected @endif  disabled>Select</option>
+                            @if(!old('type'))
+                                <option value="Daily" @if($apartment->type === "Daily") selected @endif>Daily</option>
+                                <option value="Weekly" @if($apartment->type === "Weekly") selected @endif>Weekly</option>
+                                <option value="Monthly" @if($apartment->type === "Monthly") selected @endif>Monthly</option>
+                                <option value="Yearly" @if($apartment->type === "Yearly") selected @endif>Yearly</option>
+                          @else
                             <option value="Daily" @if(old('type') === "Daily") selected @endif>Daily</option>
                             <option value="Weekly" @if(old('type') === "Weekly") selected @endif>Weekly</option>
                             <option value="Monthly" @if(old('type') === "Monthly") selected @endif>Monthly</option>
                             <option value="Yearly" @if(old('type') === "Yearly") selected @endif>Yearly</option>
+                            @endif
                         </select>
 
                     </div>
