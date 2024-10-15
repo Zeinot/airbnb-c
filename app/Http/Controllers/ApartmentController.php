@@ -46,7 +46,7 @@ class ApartmentController extends Controller
             "address" => "required|min:10|max:200",
             "description" => "required|min:10|max:20000",
             "price" => "required|min:0.01",
-//            "images" => "required",
+            "images" => "required",
             'images.*' => 'image|mimes:jpg,jpeg,png,webp,svg|max:20048'
 
         ], [
@@ -112,9 +112,8 @@ class ApartmentController extends Controller
 //        dump($files);
 
         DB::transaction(function () use ($apartment, $apartment_images) {
-            foreach ($apartment_images as $apartment_image){
-//                Storage::delete($apartment_image->path);
-            dd($apartment_image->path);
+            foreach ($apartment_images as $apartment_image) {
+                Storage::disk('public')->delete($apartment_image->path);
                 $apartment_image->delete();
             }
             $apartment->delete();
