@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/apartments', [ApartmentController::class, "store"])->name("apartments.store");
-    Route::post('/admin/apartments/{apartment}/', [ApartmentController::class, "update"])->name("apartments.update");
+    Route::patch('/admin/apartments/{apartment}/', [ApartmentController::class, "update"])->name("apartments.update");
     Route::get('/admin/apartments/{apartment}/edit', [ApartmentController::class, "edit"])->name("apartments.edit");
     Route::delete('/admin/apartments/{apartment}/', [ApartmentController::class, "destroy"])->name("apartments.destroy");
     Route::get('/apartments/{apartment}/', [ApartmentController::class, "show"])->name("apartments.show");

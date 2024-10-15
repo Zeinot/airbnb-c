@@ -798,9 +798,9 @@
                     </svg>
                     Loading...
                 </button>`;
-        alert('test');
+
         document.addEventListener('wysiwyg-loaded', () => {
-            alert("hello")
+
             const description = `{!!old("description")!!}` || `{!! $apartment->description!!}`;
             console.log(description)
             document.querySelector('.tiptap').innerHTML = description
