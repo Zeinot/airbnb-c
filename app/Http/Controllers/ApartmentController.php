@@ -99,7 +99,8 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        //
+        dd($request->all(),
+            $apartment);
     }
 
     /**

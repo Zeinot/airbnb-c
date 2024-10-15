@@ -25,9 +25,9 @@
     <div class="rounded-lg border-gray-300 dark:border-gray-600 mb-4">
         <div
             class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <form id="createForm" class="space-y-6" method="POST" action="{{route("apartments.store")}}"
+            <form id="createForm" class="space-y-6" method="POST" action="{{route("apartments.update", ["apartment" => $apartment])}}"
                   enctype="multipart/form-data">
-                @csrf
+                @csrf @method("patch")
                 <h5 class="text-xl font-medium text-gray-900 dark:text-white">Create Apartment</h5>
                 <div>
                     <label for="title"
