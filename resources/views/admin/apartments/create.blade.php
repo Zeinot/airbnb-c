@@ -798,7 +798,7 @@
                     Loading...
                 </button>`
         document.addEventListener('wysiwyg-loaded', () => {
-            document.querySelector('.tiptap').innerHTML = "{!! old("description")!!}"
+            document.querySelector('.tiptap').innerHTML = `{!! old("description")!!}`
         });
         console.log(document.querySelector('.tiptap'))
         document.querySelector('.tiptap')

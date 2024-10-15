@@ -107,9 +107,8 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-//        dd("delete => ",$apartment);
+
         $apartment_images = $apartment->apartment_images;
-//        dump($files);
 
         DB::transaction(function () use ($apartment, $apartment_images) {
             foreach ($apartment_images as $apartment_image) {
@@ -120,6 +119,6 @@ class ApartmentController extends Controller
             dump("success");
         });
 
-//        return redirect(route("apartments.admin_index"));
+        return redirect(route("apartments.admin_index"));
     }
 }
