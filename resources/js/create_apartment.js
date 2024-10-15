@@ -16,7 +16,6 @@ import 'filepond/dist/filepond.min.css';
 // Import the plugin styles
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
 import '@pqina/pintura/pintura.css';
-import { openDefaultEditor } from '@pqina/pintura';
 
 
 import "./editor.js"
@@ -26,7 +25,8 @@ FilePond.registerPlugin(
     FilePondPluginImagePreview,
     FilePondPluginImageExifOrientation,
     //FilePondPluginFileValidateSize,
-    FilePondPluginImageEdit
+    FilePondPluginImageEdit,
+
 );
 // Create a FilePond instance
 const pond = FilePond.create(inputElement, {

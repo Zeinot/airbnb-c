@@ -79,6 +79,8 @@
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Photos</label>
                     <input
                         id="images" name="images[]" type="file"
+                        class="filepond"
+                        accept="image/png, image/jpeg, image/gif"
                         multiple/>
                 </div>
                 <div>
