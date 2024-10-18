@@ -25,13 +25,19 @@ Route::get('/dashboard', function () {
     ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::post('/apartments', [ApartmentController::class, 'store'])->name('apartments.store');
-    Route::patch('/admin/apartments/{apartment}/', [ApartmentController::class, 'update'])->name('apartments.update');
-    Route::get('/admin/apartments/{apartment}/edit', [ApartmentController::class, 'edit'])->name('apartments.edit');
-    Route::delete('/admin/apartments/{apartment}/', [ApartmentController::class, 'destroy'])->name('apartments.destroy');
-    Route::get('/apartments/{apartment}/', [ApartmentController::class, 'show'])->name('apartments.show');
     Route::get('/admin', [ApartmentController::class, 'admin_index'])->name('apartments.admin_index');
+    Route::get('/apartments/{apartment}/', [ApartmentController::class, 'show'])->name('apartments.show');
+
     Route::get('/admin/apartments/create', [ApartmentController::class, 'create'])->name('apartments.create');
+    Route::post('/apartments', [ApartmentController::class, 'store'])->name('apartments.store');
+
+    Route::get('/admin/apartments/{apartment}/edit', [ApartmentController::class, 'edit'])->name('apartments.edit');
+    Route::patch('/admin/apartments/{apartment}/', [ApartmentController::class, 'update'])->name('apartments.update');
+
+    Route::delete('/admin/apartments/{apartment}/', [ApartmentController::class, 'destroy'])->name('apartments.destroy');
+
+
+
     //  ------------------------ profile ----------------------------
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
