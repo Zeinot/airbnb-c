@@ -38,13 +38,13 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        dump(request()->all());
+        // dd(request()->all());
         $request->validate([
             "title" => "required|min:25|max:200",
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
             "city" => "required|min:3|max:50",
             "address" => "required|min:10|max:200",
-            "description" => "required|min:10|max:20000",
+            "description" => "required|min:10|max:5000",
             "price" => "required|min:0.01",
             "images" => "required",
             'images.*' => 'image|mimes:jpg,jpeg,png,webp,svg|max:20048'
@@ -99,8 +99,51 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        //
-    }
+        // dd( $old_images = $apartment->apartment_images);
+        $request->validate([
+            "title" => "required|min:25|max:200",
+            "type" => "required|in:Daily,Weekly,Monthly,Yearly",
+            "city" => "required|min:3|max:50",
+            "address" => "required|min:10|max:200",
+            "description" => "required|min:10|max:5000",
+            "price" => "required|min:0.01",
+            "images" => "required",
+            'images.*' => 'image|mimes:jpg,jpeg,png,webp,svg|max:20048'
+
+        ], [
+            "images.required" => "Please upload Images",
+            "images.*.image" => "The files must be images",
+            "images.*.mimes" => "Images must be jpg,jpeg,png,webp",
+            "images.*.max" => "Images too large",
+        ]);
+
+            DB::transaction(function () use ($request, $apartment) {
+                $apartment->title = $request->title;
+                $apartment->type = $request->type;
+                $apartment->city = $request->city;
+                $apartment->address = $request->address;
+                $apartment->description = $request->description;
+                $apartment->price = $request->price;
+
+                $images = request()->file('images');
+                $old_images = $apartment->apartment_images;
+
+                foreach ($old_images as $apartment_image) {
+                    Storage::disk('public')->delete($apartment_image->path);
+                    $apartment_image->delete();
+                }
+
+                foreach ($images as $file) {
+
+                    $path = $file->store('apartment_images', 'public');
+                    $apartment_image = ApartmentImages::create([
+                        "path" => $path,
+                        "apartment_id" => $apartment->id,
+                    ]);
+                }
+            });
+            dd($request->all(),  $apartment);
+        }
 
     /**
      * Remove the specified resource from storage.
