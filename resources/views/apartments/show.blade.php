@@ -55,19 +55,19 @@
             <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
                     <div class="max-w-md lg:max-w-lg mx-auto">
-                        <div id="product-1-tab-content">
+                        <div id="apartment-{{$apartment->id}}-tab-content">
                             @foreach($apartment->apartment_images as $apartment_image)
-                            <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-1"
-                                 role="tabpanel" aria-labelledby="product-1-image-1-tab">
+                            <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="apartment-{{$apartment->id}}-apartment-image-{{$apartment_image->id}}"
+                                 role="tabpanel" aria-labelledby="apartment-{{$apartment->id}}-apartment-image-{{$apartment_image->id}}-tab">
                                 <img class="w-full mx-auto dark:hidden"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt=""/>
+                                      src="{{Storage::disk('public')->url($apartment_image->path) }}" alt=""/>
 
                             </div>
                             @endforeach
                         </div>
 
-                        <ul class="grid grid-cols-4 gap-4 mt-8" id="product-1-tab"
-                            data-tabs-toggle="#product-1-tab-content"
+                        <ul class="grid grid-cols-4 gap-4 mt-8" id="apartment-{{$apartment->id}}-tab"
+                            data-tabs-toggle="#apartment-{{$apartment->id}}-tab-content"
                             data-tabs-active-classes="border-gray-200 dark:border-gray-700"
                             data-tabs-inactive-classes="border-transparent hover:border-gray-200 dark:hover:dark:border-gray-700 dark:border-transparent"
                             role="tablist">
@@ -76,11 +76,11 @@
                             <li class="me-2" role="presentation">
                                 <button
                                     class="h-20 w-20 overflow-hidden border-2 rounded-lg sm:h-20 sm:w-20 md:h-24 md:w-24 p-2 cursor-pointer mx-auto"
-                                    id="product-1-image-1-tab" data-tabs-target="#product-1-image-1" type="button"
-                                    role="tab" aria-controls="product-1-image-1" aria-selected="false">
+                                    id="apartment-{{$apartment->id}}-apartment-image-{{$apartment_image->id}}-tab" data-tabs-target="#apartment-{{$apartment->id}}-apartment-image-{{$apartment_image->id}}" type="button"
+                                    role="tab" aria-controls="apartment-{{$apartment->id}}-apartment-image-{{$apartment_image->id}}" aria-selected="false">
                                     <img
                                         class="object-contain w-full h-full dark:hidden"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
+                                         src="{{Storage::disk('public')->url($apartment_image->path) }}"
                                         alt=""
                                     />
 
