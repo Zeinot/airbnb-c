@@ -2,7 +2,6 @@
 @section('content')
     @vite('resources/js/create_apartment.js')
     @dump($apartment)
-    {{--    @dump(auth()->user()->id) --}}
     @if ($errors->all())
         <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
             role="alert">
@@ -51,7 +50,6 @@
                         <input type="text" name="address" id="address" placeholder="Address ..."
                             @if (old('address')) value="{{ old('address') }}" @else value="{{ $apartment->address }}" @endif
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
-
                     </div>
                     <div>
                         <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price
@@ -60,7 +58,6 @@
                             @if (old('price')) value="{{ old('price') }}" @else value="{{ $apartment->price }}" @endif
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="$2999">
-
                     </div>
                     <div>
                         <label for="type"
@@ -94,11 +91,7 @@
                     @dump(old('description'), $apartment->description)
                     <textarea id="description" name="description" rows="4"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Description...">  @if (old('description')) {{ old('description') }} @else {{ $apartment->description }} @endif    </textarea>
-
-                    {{--                    <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> --}}
-                    {{--                        Username already taken! --}}
-                    {{--                    </p> --}}
+                        placeholder="Description...">@if(old('description')){{ old('description') }}@else{{ $apartment->description }}@endif</textarea>
                 </div>
 
                 <div class="flex gap-3">
@@ -112,7 +105,7 @@
                             class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                             Update Apartment
                         </button>
-                        {{--                        <button type="submit"></button> --}}
+
                     </div>
                 </div>
                 <br />
@@ -133,29 +126,9 @@
                     </svg>
                     Loading...
                 </button>`;
-
-        // document.addEventListener('wysiwyg-loaded', () => {
-
-        //     const description = `{!! old('description') !!}` || `{!! $apartment->description !!}`;
-        //     console.log(description)
-        //     document.querySelector('.tiptap').innerHTML = description
-        // {{--           "{!! old("description")!!}" ||          --}}
-
-        // });
-        // console.log(document.querySelector('.tiptap'))
-        // document.querySelector('.tiptap')
-        // {{-- document.querySelector('.tiptap').content = "{{old("description")}}"; --}}
-        // {{-- console.log( document.querySelector('.tiptap').content,  document.querySelector('.tiptap')) --}}
         const handleSubmit = () => {
-            // document.querySelector('.tiptap').innerHTML = "TEST";
-            // {{-- document.querySelector('.tiptap').innerHTML = "{{old("description")}}"; --}}
-
-            // console.log(document.querySelector('.tiptap').innerHTML, document.querySelector('.tiptap'))
-            // document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
             document.getElementById("submit").outerHTML = loading;
             document.getElementById("createForm").submit();
-
-            // console.log(document.getElementById('description').value)
         }
     </script>
 @endsection
