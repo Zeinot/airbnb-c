@@ -56,7 +56,7 @@
                 <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
                     <div class="max-w-md lg:max-w-lg mx-auto">
                         <div id="product-1-tab-content">
-                            @foreach([1,2,3,4] as $i)
+                            @foreach($apartment->apartment_images as $apartment_image)
                             <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-1"
                                  role="tabpanel" aria-labelledby="product-1-image-1-tab">
                                 <img class="w-full mx-auto dark:hidden"
@@ -72,7 +72,7 @@
                             data-tabs-inactive-classes="border-transparent hover:border-gray-200 dark:hover:dark:border-gray-700 dark:border-transparent"
                             role="tablist">
 
-           @foreach([1,2,3,4] as $i)
+           @foreach($apartment->apartment_images as $apartment_image)
                             <li class="me-2" role="presentation">
                                 <button
                                     class="h-20 w-20 overflow-hidden border-2 rounded-lg sm:h-20 sm:w-20 md:h-24 md:w-24 p-2 cursor-pointer mx-auto"
