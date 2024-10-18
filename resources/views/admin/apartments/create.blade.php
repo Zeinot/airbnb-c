@@ -86,28 +86,21 @@
                 <div>
                     <label for="description"
                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                    {{-- <input
-                        id="description" name="description" hidden/> --}}
 
                         <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description..."></textarea>
-                    {{--                    <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span>--}}
-                    {{--                        Username already taken!--}}
-                    {{--                    </p>--}}
-                </div>
+                            </div>
 
                 <div class="flex gap-3">
                     <a href="{{ route('apartments.admin_index') }}"
                        class="w-fit text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                         Cancel
                     </a>
-
                     <div id="submit">
                         <button type="submit"
                                 onclick="handleSubmit()"
                                 class="w-fit text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                             Create Apartment
                         </button>
-                        {{--                        <button type="submit"></button>--}}
                     </div>
                 </div>
                 <br/>
@@ -129,23 +122,8 @@
                     </svg>
                     Loading...
                 </button>`
-        // document.addEventListener('wysiwyg-loaded', () => {
-        //     document.querySelector('.tiptap').innerHTML = `{!! old("description")!!}`
-        // });
-        // console.log(document.querySelector('.tiptap'))
-        // document.querySelector('.tiptap')
-        // {{--document.querySelector('.tiptap').content = "{{old("description")}}";--}}
-        // {{--console.log( document.querySelector('.tiptap').content,  document.querySelector('.tiptap'))--}}
         const handleSubmit = () => {
-            // document.querySelector('.tiptap').innerHTML = "TEST";
-            // {{--document.querySelector('.tiptap').innerHTML = "{{old("description")}}";--}}
-
-            // console.log(document.querySelector('.tiptap').innerHTML, document.querySelector('.tiptap'))
-            // document.getElementById('description').value = document.querySelector('.tiptap').getHTML();
             document.getElementById("submit").outerHTML = loading;
-            document.getElementById("createForm").submit();
-
-            // console.log(document.getElementById('description').value)
-        }
+            document.getElementById("createForm").submit();  }
     </script>
 @endsection
