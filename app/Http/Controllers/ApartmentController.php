@@ -124,7 +124,7 @@ class ApartmentController extends Controller
                 $apartment->address = $request->address;
                 $apartment->description = $request->description;
                 $apartment->price = $request->price;
-
+                $apartment->save();
                 $images = request()->file('images');
                 $old_images = $apartment->apartment_images;
 
@@ -142,7 +142,8 @@ class ApartmentController extends Controller
                     ]);
                 }
             });
-            dd($request->all(),  $apartment);
+//            dd($request->all(),  $apartment);
+        return redirect(route("apartments.admin_index"));
         }
 
     /**
