@@ -42,3 +42,7 @@ const pond = FilePond.create(inputElement, {
     labelIdle : 'Drag & Drop your photos or <span class="filepond--label-action"> Browse </span>'
 });
 
+
+const pondInitevent = new CustomEvent("pondInitevent", { detail : {pond} });
+
+document.dispatchEvent(pondInitevent)

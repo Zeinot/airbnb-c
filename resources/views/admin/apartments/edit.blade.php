@@ -127,4 +127,25 @@
             document.getElementById("createForm").submit();
         }
     </script>
+
+@php
+        $images = [];
+    foreach($apartment->apartment_images as $apartment_image){
+//        Storage::disk('public')->url($apartment_image->path)
+        array_push($images, Storage::disk('public')->url($apartment_image->path));
+
+    }
+    @endphp
+    <script>
+        document.addEventListener(
+            "pondInitevent",
+            (e) => {
+                console.log("test")
+                var images = {{ Js::from($images) }};
+                console.log("images:", images)
+                console.log(e.detail.pond.addFiles(images))
+            },
+            // false,
+        );
+    </script>
 @endsection
