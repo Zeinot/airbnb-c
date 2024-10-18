@@ -40,7 +40,7 @@ class ApartmentController extends Controller
     {
         // dd(request()->all());
         $request->validate([
-            "title" => "required|min:25|max:200",
+            "title" => "required|min:25|max:80",
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
             "city" => "required|min:3|max:50",
             "address" => "required|min:10|max:200",
@@ -101,7 +101,7 @@ class ApartmentController extends Controller
     {
         // dd( $old_images = $apartment->apartment_images);
         $request->validate([
-            "title" => "required|min:25|max:200",
+            "title" => "required|min:25|max:80",
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
             "city" => "required|min:3|max:50",
             "address" => "required|min:10|max:200",
@@ -124,7 +124,7 @@ class ApartmentController extends Controller
                 $apartment->address = $request->address;
                 $apartment->description = $request->description;
                 $apartment->price = $request->price;
-
+                $apartment->save();
                 $images = request()->file('images');
                 $old_images = $apartment->apartment_images;
 
@@ -142,7 +142,8 @@ class ApartmentController extends Controller
                     ]);
                 }
             });
-            dd($request->all(),  $apartment);
+//            dd($request->all(),  $apartment);
+        return redirect(route("apartments.admin_index"));
         }
 
     /**

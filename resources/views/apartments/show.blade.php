@@ -105,7 +105,7 @@
                                 ${{$apartment->price}} | {{$apartment->type}}
                             </p>
 
-                            <div class="flex items-center gap-2 mt-2 sm:mt-0">
+{{--                            <div class="flex items-center gap-2 mt-2 sm:mt-0">
                                 <div class="flex items-center gap-1">
                                     <svg
                                         class="w-4 h-4 text-yellow-300"
@@ -184,7 +184,7 @@
                                 >
                                     345 Reviews
                                 </a>
-                            </div>
+                            </div>--}}
                         </div>
                         <div>
 
