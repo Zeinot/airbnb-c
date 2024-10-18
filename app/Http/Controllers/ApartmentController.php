@@ -38,7 +38,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        dd(request()->all());
+        // dd(request()->all());
         $request->validate([
             "title" => "required|min:25|max:200",
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
