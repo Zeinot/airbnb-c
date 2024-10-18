@@ -60,35 +60,9 @@
                                  role="tabpanel" aria-labelledby="product-1-image-1-tab">
                                 <img class="w-full mx-auto dark:hidden"
                                      src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt=""/>
-                                <img class="w-full mx-auto hidden dark:block"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
-                                     alt=""/>
+
                             </div>
-                            <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-2"
-                                 role="tabpanel" aria-labelledby="product-1-image-2-tab">
-                                <img class="w-full mx-auto dark:hidden"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back.svg" alt=""/>
-                                <img class="w-full mx-auto hidden dark:block"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back-dark.svg"
-                                     alt=""/>
-                            </div>
-                            <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-3"
-                                 role="tabpanel" aria-labelledby="product-1-image-3-tab">
-                                <img class="w-full mx-auto dark:hidden"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components.svg"
-                                     alt=""/>
-                                <img class="w-full mx-auto hidden dark:block"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components-dark.svg"
-                                     alt=""/>
-                            </div>
-                            <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-900" id="product-1-image-4"
-                                 role="tabpanel" aria-labelledby="product-1-image-4-tab">
-                                <img class="w-full mx-auto dark:hidden"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side.svg" alt=""/>
-                                <img class="w-full mx-auto hidden dark:block"
-                                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side-dark.svg"
-                                     alt=""/>
-                            </div>
+
                         </div>
 
                         <ul class="grid grid-cols-4 gap-4 mt-8" id="product-1-tab"
@@ -96,6 +70,8 @@
                             data-tabs-active-classes="border-gray-200 dark:border-gray-700"
                             data-tabs-inactive-classes="border-transparent hover:border-gray-200 dark:hover:dark:border-gray-700 dark:border-transparent"
                             role="tablist">
+
+
                             <li class="me-2" role="presentation">
                                 <button
                                     class="h-20 w-20 overflow-hidden border-2 rounded-lg sm:h-20 sm:w-20 md:h-24 md:w-24 p-2 cursor-pointer mx-auto"
@@ -106,64 +82,11 @@
                                         src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
                                         alt=""
                                     />
-                                    <img
-                                        class="object-contain w-full h-full hidden dark:block"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
-                                        alt=""
-                                    />
+
                                 </button>
                             </li>
-                            <li class="me-2" role="presentation">
-                                <button
-                                    class="h-20 w-20 overflow-hidden border-2 rounded-lg sm:h-20 sm:w-20 md:h-24 md:w-24 p-2 cursor-pointer mx-auto"
-                                    id="product-1-image-2-tab" data-tabs-target="#product-1-image-2" type="button"
-                                    role="tab" aria-controls="product-1-image-2" aria-selected="false">
-                                    <img
-                                        class="object-contain w-full h-full dark:hidden"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back.svg"
-                                        alt=""
-                                    />
-                                    <img
-                                        class="object-contain w-full h-full hidden dark:block"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-back-dark.svg"
-                                        alt=""
-                                    />
-                                </button>
-                            </li>
-                            <li class="me-2" role="presentation">
-                                <button
-                                    class="h-20 w-20 overflow-hidden border-2 rounded-lg sm:h-20 sm:w-20 md:h-24 md:w-24 p-2 cursor-pointer mx-auto"
-                                    id="product-1-image-3-tab" data-tabs-target="#product-1-image-3" type="button"
-                                    role="tab" aria-controls="product-1-image-3" aria-selected="false">
-                                    <img
-                                        class="object-contain w-full h-full dark:hidden"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components.svg"
-                                        alt=""
-                                    />
-                                    <img
-                                        class="object-contain w-full h-full hidden dark:block"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-components-dark.svg"
-                                        alt=""
-                                    />
-                                </button>
-                            </li>
-                            <li class="me-2" role="presentation">
-                                <button
-                                    class="h-20 w-20 overflow-hidden border-2 rounded-lg sm:h-20 sm:w-20 md:h-24 md:w-24 p-2 cursor-pointer mx-auto"
-                                    id="product-1-image-4-tab" data-tabs-target="#product-1-image-4" type="button"
-                                    role="tab" aria-controls="product-1-image-4" aria-selected="false">
-                                    <img
-                                        class="object-contain w-full h-full dark:hidden"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side.svg"
-                                        alt=""
-                                    />
-                                    <img
-                                        class="object-contain w-full h-full hidden dark:block"
-                                        src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-side-dark.svg"
-                                        alt=""
-                                    />
-                                </button>
-                            </li>
+
+
                         </ul>
 
                     </div>
