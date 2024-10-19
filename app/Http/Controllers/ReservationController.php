@@ -7,58 +7,85 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    // Display a listing of all reservations
+    /**
+     * Affiche la liste des réservations.
+     */
     public function index()
     {
         $reservations = Reservation::all();
-        return response()->json($reservations);
+        return view('reservations.index', compact('reservations'));
     }
 
-    // Show a specific reservation
-    public function show($id)
+    /**
+     * Affiche le formulaire de création d'une nouvelle réservation.
+     */
+    public function create()
     {
-        $reservation = Reservation::findOrFail($id);
-        return response()->json($reservation);
+        return view('reservations.create');
     }
 
-    // Store a newly created reservation
+    /**
+     * Enregistre une nouvelle réservation dans la base de données.
+     */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
+            'apartment_id' => 'required|exists:apartments,id',
             'user_id' => 'required|exists:users,id',
-            'listing_id' => 'required|exists:listings,id',
-            'start_date' => 'required|date|after_or_equal:today',
-            'end_date' => 'required|date|after:start_date',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+            'status' => 'required|in:pending,confirmed,canceled',
         ]);
 
-        $reservation = Reservation::create($validatedData);
+        Reservation::create($request->all());
 
-        return response()->json(['message' => 'Reservation created successfully', 'reservation' => $reservation], 201);
+        return redirect()->route('reservations.index')
+            ->with('success', 'Réservation créée avec succès.');
     }
 
-    // Update a specific reservation
-    public function update(Request $request, $id)
+    /**
+     * Affiche les détails d'une réservation spécifique.
+     */
+    public function show(Reservation $reservation)
     {
-        $reservation = Reservation::findOrFail($id);
+        return view('reservations.show', compact('reservation'));
+    }
 
-        $validatedData = $request->validate([
-            'user_id' => 'sometimes|exists:users,id',
-            'listing_id' => 'sometimes|exists:listings,id',
-            'start_date' => 'sometimes|date|after_or_equal:today',
-            'end_date' => 'sometimes|date|after:start_date',
+    /**
+     * Affiche le formulaire d'édition d'une réservation existante.
+     */
+    public function edit(Reservation $reservation)
+    {
+        return view('reservations.edit', compact('reservation'));
+    }
+
+    /**
+     * Met à jour une réservation dans la base de données.
+     */
+    public function update(Request $request, Reservation $reservation)
+    {
+        $request->validate([
+            'apartment_id' => 'required|exists:apartments,id',
+            'user_id' => 'required|exists:users,id',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+            'status' => 'required|in:pending,confirmed,canceled',
         ]);
 
-        $reservation->update($validatedData);
+        $reservation->update($request->all());
 
-        return response()->json(['message' => 'Reservation updated successfully', 'reservation' => $reservation], 200);
+        return redirect()->route('reservations.index')
+            ->with('success', 'Réservation mise à jour avec succès.');
     }
 
-    // Delete a specific reservation
-    public function destroy($id)
+    /**
+     * Supprime une réservation de la base de données.
+     */
+    public function destroy(Reservation $reservation)
     {
-        $reservation = Reservation::findOrFail($id);
         $reservation->delete();
 
-        return response()->json(['message' => 'Reservation deleted successfully'], 200);
+        return redirect()->route('reservations.index')
+            ->with('success', 'Réservation supprimée avec succès.');
     }
 }
