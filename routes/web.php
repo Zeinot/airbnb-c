@@ -12,7 +12,6 @@ Route::get('/', function () {
     return view('home-page');
 });
 
-Route::get('/apartments', [ApartmentController::class, 'index'])->name('apartments.index');
 
 Route::get('/n', function () {
     return view('welcome');
@@ -23,6 +22,8 @@ Route::get('/dashboard', function () {
 })
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::get('/apartments', [ApartmentController::class, 'index'])->name('apartments.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ApartmentController::class, 'admin_index'])->name('apartments.admin_index');
@@ -37,14 +38,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/apartments/{apartment}/', [ApartmentController::class, 'destroy'])->name('apartments.destroy');
 
 
-
     //  ------------------------ profile ----------------------------
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
 
 
 // Listings routes
