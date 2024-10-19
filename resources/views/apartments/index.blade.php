@@ -1217,7 +1217,7 @@
                     </div>
                     <!-- Modal body -->
                     <div class="px-4 md:px-5">
-                        <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+{{--                        <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
                             <ul class="-mb-px flex flex-wrap text-center text-sm font-medium" id="myTab"
                                 data-tabs-toggle="#myTabContent" role="tablist">
                                 <li class="mr-1" role="presentation">
@@ -1234,9 +1234,9 @@
                                     </button>
                                 </li>
                             </ul>
-                        </div>
+                        </div>--}}
                         <div id="myTabContent">
-                            <div class="grid grid-cols-2 gap-4 md:grid-cols-3" id="brand" role="tabpanel"
+{{--                            <div class="grid grid-cols-2 gap-4 md:grid-cols-3" id="brand" role="tabpanel"
                                  aria-labelledby="brand-tab">
                                 <div class="space-y-2">
                                     <h5 class="text-lg font-medium uppercase text-black dark:text-white">A</h5>
@@ -1594,10 +1594,10 @@
                                             Floston (45) </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}CHANGE HERE
                         </div>
 
-                        <div class="space-y-4" id="advanced-filters" role="tabpanel"
+{{--                        <div class="space-y-4" id="advanced-filters" role="tabpanel"
                              aria-labelledby="advanced-filters-tab">
                             <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
                                 <div class="grid grid-cols-2 gap-3">
@@ -2058,14 +2058,14 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
 
                     <!-- Modal footer -->
                     <div class="flex items-center space-x-4 rounded-b p-4 dark:border-gray-600 md:p-5">
                         <button type="submit"
                                 class="rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-700 dark:hover:bg-primary-800 dark:focus:ring-primary-800">
-                            Show 50 results
+                            Apply
                         </button>
                         <button type="reset"
                                 class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">
