@@ -56,11 +56,8 @@ Route::put('/listings/{id}', [ListingController::class, 'update']);
 Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
 
 // Reservations routes
-Route::get('/reservations', [ReservationController::class, 'index']);
-Route::get('/reservations/{id}', [ReservationController::class, 'show']);
-Route::post('/reservations', [ReservationController::class, 'store']);
-Route::put('/reservations/{id}', [ReservationController::class, 'update']);
-Route::delete('/reservations/{id}', [ReservationController::class, 'destroy']);
+
+Route::resource('reservations', ReservationController::class);
 
 // Reviews routes
 Route::get('/reviews', [ReviewController::class, 'index']);
