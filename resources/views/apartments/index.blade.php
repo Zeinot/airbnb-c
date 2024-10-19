@@ -171,7 +171,7 @@
                                 </div>--}}
                             </div>
 
-                            <a href="{{route("apartments.show", $apartment->id)}}"
+                            <a href="{{route("apartments.show", $apartment)}}"
                                class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">Apple
                                 iMac 27", 1TB HDD, Retina 5K Display, M3 Max</a>
 
