@@ -1,6 +1,6 @@
 @extends("layouts.custom.home")
 @section("content")
-    @dump(\App\Models\Apartment::all())
+{{--    @dump(\App\Models\Apartment::all())--}}
     Apartments index
 
     <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">

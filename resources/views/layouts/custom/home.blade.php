@@ -212,7 +212,7 @@
                             <li><a href="{{route("apartments.admin_index")}}" title=""
                                    class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
                                     My Apartments </a></li>
-                            <li><a href="#" title=""
+{{--                            <li><a href="#" title=""
                                    class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
                                     Settings </a></li>
                             <li><a href="#" title=""
@@ -223,13 +223,21 @@
                                     Delivery Addresses </a></li>
                             <li><a href="#" title=""
                                    class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
-                                    Billing Data </a></li>
+                                    Billing Data </a></li>--}}
                         </ul>
 
                         <div class="p-2 text-sm font-medium text-gray-900 dark:text-white">
                             <a href="#" title=""
-                               class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
-                                Sign Out </a>
+                               class="">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <a class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600" href="{{route('logout')}}"
+                                                     onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </a>
+                                </form> </a>
                         </div>
                     </div>
 
