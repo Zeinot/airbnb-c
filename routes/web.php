@@ -10,19 +10,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home-page');
-});
+})->name("home");
+
+
+//Route::get('/n', function () {
+//    return view('welcome');
+//})
+//
+//
+Route::get('/dashboard', function () {
+//    return view('dashboard');
+    return redirect(route('apartments.admin_index'));
+})->middleware(['auth', 'verified'])
+    ->name('dashboard');;
 
 Route::get('/apartments', [ApartmentController::class, 'index'])->name('apartments.index');
-
-Route::get('/n', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ApartmentController::class, 'admin_index'])->name('apartments.admin_index');
@@ -35,7 +37,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/admin/apartments/{apartment}/', [ApartmentController::class, 'update'])->name('apartments.update');
 
     Route::delete('/admin/apartments/{apartment}/', [ApartmentController::class, 'destroy'])->name('apartments.destroy');
-
 
 
     //  ------------------------ profile ----------------------------
