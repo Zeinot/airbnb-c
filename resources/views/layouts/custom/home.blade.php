@@ -26,18 +26,18 @@
 
                 <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
                     <li>
-                        <a href="#" title=""
+                        <a href="{{route("home")}}" title=""
                            class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                             Home
                         </a>
                     </li>
                     <li class="shrink-0">
-                        <a href="#" title=""
+                        <a href="{{route("apartments.index")}}" title=""
                            class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Best Sellers
+                         Browse Apartments
                         </a>
                     </li>
-                    <li class="shrink-0">
+{{--                    <li class="shrink-0">
                         <a href="#" title=""
                            class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                             Gift Ideas
@@ -54,11 +54,12 @@
                            class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                             Sell
                         </a>
-                    </li>
+                    </li>--}}
                 </ul>
             </div>
+            <div class="flex items-center lg:space-x-2">
             @auth
-                <div class="flex items-center lg:space-x-2">
+
 
                     {{--                <button id="myCartDropdownButton1" data-dropdown-toggle="myCartDropdown1" type="button" class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
                               <span class="sr-only">
@@ -232,6 +233,24 @@
                         </div>
                     </div>
 
+                  @endauth
+                @if(empty(auth()->user()))   <a href="/register"
+                                                class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
+                    {{--                        <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                 height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-width="2"
+                                                      d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                                            </svg>--}}
+                    Register
+                    <svg class="w-4 h-4 text-gray-900 dark:text-white ml-1 mt-[2.5px]" aria-hidden="true"
+                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+
+                    </svg>
+
+
+                </a>
+                @endif
                     <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1"
                             aria-controls="ecommerce-navbar-menu-1" aria-expanded="false"
                             class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
@@ -245,30 +264,14 @@
                         </svg>
                     </button>
                 </div>
-            @endauth
-            @if(empty(auth()->user()))
-                <div class="flex items-center lg:space-x-2">
 
 
-                    <a href="/register"
-                            class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
-{{--                        <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                             height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-width="2"
-                                  d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                        </svg>--}}
-                        Register
-                        <svg class="w-4 h-4 text-gray-900 dark:text-white ml-1 mt-[2.5px]" aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-
-                        </svg>
 
 
-                    </a>
 
 
-                </div> @endif
+
+
 
 
         </div>
@@ -277,12 +280,12 @@
              class="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 hidden px-4 mt-4">
             <ul class="text-gray-900 dark:text-white text-sm font-medium space-y-3">
                 <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
+                    <a href="{{route("home")}}"class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
                 </li>
                 <li>
                     <a href="{{route("apartments.index")}}" class="hover:text-primary-700 dark:hover:text-primary-500">Browse Apartments</a>
                 </li>
-                <li>
+{{--                <li>
                     <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Gift Ideas</a>
                 </li>
                 <li>
@@ -293,10 +296,12 @@
                 </li>
                 <li>
                     <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home & Garden</a>
-                </li>
+                </li>--}}
             </ul>
         </div>
+
     </div>
+
 </nav>
 @yield("content")
 <footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
