@@ -13,15 +13,16 @@ Route::get('/', function () {
 })->name("home");
 
 
-Route::get('/n', function () {
-    return view('welcome');
-});
-
+//Route::get('/n', function () {
+//    return view('welcome');
+//})
+//
+//
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+//    return view('dashboard');
+    return redirect(route('apartments.admin_index'));
+})->middleware(['auth', 'verified'])
+    ->name('dashboard');;
 
 Route::get('/apartments', [ApartmentController::class, 'index'])->name('apartments.index');
 
@@ -43,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 
 // Listings routes
