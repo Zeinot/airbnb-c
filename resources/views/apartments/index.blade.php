@@ -56,19 +56,32 @@ $max_price,
                     </nav>
                     <h2 class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Apartments</h2>
                     <div class="mt-3">
-                    <span
-                        class="text-nowrap bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300  ">Filter X</span>
-                        <span
-                            class="text-nowrap bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300  ">Filter X</span>
-                        <span
-                            class="text-nowrap bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">Filter X</span>
-                        <span
-                            class="text-nowrap bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Filter X</span>
-                        <span
-                            class="text-nowrap bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Filter X</span>
-                        <span
-                            class="text-nowrap bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">Filter X</span>
+                        @if($search)
+                            <span
+                                class="text-nowrap bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300  ">{{$search}}</span>
+                        @endif
+                        @if($type)
+                            <span
+                                class="text-nowrap bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300  ">{{$type}}</span>
+                        @endif
+                        @if($city)
+                            <span
+                                class="text-nowrap bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">{{$city}}</span>
+                        @endif
 
+
+                        @if($min_price)
+                            <span
+                                class="text-nowrap bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">{{$min_price}} <</span>
+                        @endif
+                            @if($max_price)
+                                <span
+                                    class="text-nowrap bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">< {{$max_price}}</span>
+                            @endif
+                            @if($address)
+                                <span
+                                        class="mt-3 line-clamp-1 max-w-[250px] bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">{{$address}}</span>
+                            @endif
 
                     </div>
                 </div>
