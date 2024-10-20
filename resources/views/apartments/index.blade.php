@@ -1,3 +1,11 @@
+@dump(
+$search,
+$type,
+$city,
+$address,
+$min_price,
+$max_price,
+);
 @extends("layouts.custom.home")
 @section("content")
     {{--    @dump(\App\Models\Apartment::all())--}}

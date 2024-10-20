@@ -15,10 +15,25 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
+        $search = $request->search;
+        $type = $request->type;
+        $city = $request->city;
+        $address = $request->address;
+        $min_price = $request->min_price;
+        $max_price = $request->max_price;
+
 //        dump(Apartment::all());
         $apartments = Apartment::paginate(1);
         dump($request->all());
-        return view("apartments.index", ["apartments" => $apartments]);
+        return view("apartments.index", [
+            "apartments" => $apartments,
+            "search" => $search,
+            "type" => $type,
+            "city" => $city,
+            "address" => $address,
+            "min_price" => $min_price,
+            "max_price" => $max_price,
+        ]);
     }
 
     public function admin_index()
