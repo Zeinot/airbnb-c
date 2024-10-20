@@ -817,7 +817,7 @@
                         <span class="ml-3">Reservations</span>
                     </a>
                 </li>
-                <li>
+{{--                <li>
                     <button
                         type="button"
                         class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -1026,7 +1026,7 @@
                             >
                         </li>
                     </ul>
-                </li>
+                </li>--}}
             </ul>
             <ul
                 class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700"
@@ -1091,7 +1091,7 @@
                 </li>
             </ul>
         </div>
-        <div
+{{--        <div
             class="hidden absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-white dark:bg-gray-800 z-20"
         >
             <a
@@ -1336,7 +1336,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div>--}}
     </aside>
 
     <main class="p-4 md:ml-64 h-auto pt-20">
