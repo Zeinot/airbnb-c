@@ -13,10 +13,11 @@ class ApartmentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
 //        dump(Apartment::all());
         $apartments = Apartment::paginate(1);
+        dump($request->all());
         return view("apartments.index", ["apartments" => $apartments]);
     }
 
