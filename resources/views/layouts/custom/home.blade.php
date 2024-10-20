@@ -227,7 +227,7 @@
 
                         <div class="p-2 text-sm font-medium text-gray-900 dark:text-white">
 
-                            <form method="POST" action="{{ route('logout') }}">
+                            <form method="POST" class="mb-0" action="{{ route('logout') }}">
                                 @csrf
                                 <a class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
                                    href="{{route('logout')}}"
