@@ -34,32 +34,31 @@
                     <li class="shrink-0">
                         <a href="{{route("apartments.index")}}" title=""
                            class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                         Browse Apartments
+                            Browse Apartments
                         </a>
                     </li>
-{{--                    <li class="shrink-0">
-                        <a href="#" title=""
-                           class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Gift Ideas
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title=""
-                           class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Today's Deals
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title=""
-                           class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Sell
-                        </a>
-                    </li>--}}
+                    {{--                    <li class="shrink-0">
+                                            <a href="#" title=""
+                                               class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                                                Gift Ideas
+                                            </a>
+                                        </li>
+                                        <li class="shrink-0">
+                                            <a href="#" title=""
+                                               class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                                                Today's Deals
+                                            </a>
+                                        </li>
+                                        <li class="shrink-0">
+                                            <a href="#" title=""
+                                               class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                                                Sell
+                                            </a>
+                                        </li>--}}
                 </ul>
             </div>
             <div class="flex items-center lg:space-x-2">
-            @auth
-
+                @auth
 
                     {{--                <button id="myCartDropdownButton1" data-dropdown-toggle="myCartDropdown1" type="button" class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
                               <span class="sr-only">
@@ -212,74 +211,66 @@
                             <li><a href="{{route("apartments.admin_index")}}" title=""
                                    class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
                                     My Apartments </a></li>
-{{--                            <li><a href="#" title=""
-                                   class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
-                                    Settings </a></li>
-                            <li><a href="#" title=""
-                                   class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
-                                    Favourites </a></li>
-                            <li><a href="#" title=""
-                                   class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
-                                    Delivery Addresses </a></li>
-                            <li><a href="#" title=""
-                                   class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
-                                    Billing Data </a></li>--}}
+                            {{--                            <li><a href="#" title=""
+                                                               class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                                Settings </a></li>
+                                                        <li><a href="#" title=""
+                                                               class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                                Favourites </a></li>
+                                                        <li><a href="#" title=""
+                                                               class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                                Delivery Addresses </a></li>
+                                                        <li><a href="#" title=""
+                                                               class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                                Billing Data </a></li>--}}
                         </ul>
 
                         <div class="p-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <a href="#" title=""
-                               class="">
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
 
-                                    <a class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600" href="{{route('logout')}}"
-                                                     onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                        {{ __('Log Out') }}
-                                    </a>
-                                </form> </a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"
+                                   href="{{route('logout')}}"
+                                   onclick="event.preventDefault(); this.closest('form').submit();">
+                                    Log Out
+                                </a>
+                            </form>
                         </div>
                     </div>
 
-                  @endauth
-                @if(empty(auth()->user()))   <a href="/register"
-                                                class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
-                    {{--                        <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                                                 height="24" fill="none" viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-width="2"
-                                                      d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                                            </svg>--}}
-                    Register
-                    <svg class="w-4 h-4 text-gray-900 dark:text-white ml-1 mt-[2.5px]" aria-hidden="true"
-                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                @endauth
+                @if(empty(auth()->user()))
+                    <a href="/register"
+                       class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
+                        {{--                        <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                     height="24" fill="none" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="2"
+                                                          d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                                                </svg>--}}
+                        Register
+                        <svg class="w-4 h-4 text-gray-900 dark:text-white ml-1 mt-[2.5px]" aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="m9 5 7 7-7 7"/>
 
-                    </svg>
+                        </svg>
 
 
-                </a>
+                    </a>
                 @endif
-                    <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1"
-                            aria-controls="ecommerce-navbar-menu-1" aria-expanded="false"
-                            class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
+                <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1"
+                        aria-controls="ecommerce-navbar-menu-1" aria-expanded="false"
+                        class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
           <span class="sr-only">
             Open Menu
           </span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                             height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
-                                  d="M5 7h14M5 12h14M5 17h14"/>
-                        </svg>
-                    </button>
-                </div>
-
-
-
-
-
-
-
-
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                         height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                              d="M5 7h14M5 12h14M5 17h14"/>
+                    </svg>
+                </button>
+            </div>
 
 
         </div>
@@ -288,23 +279,24 @@
              class="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 hidden px-4 mt-4">
             <ul class="text-gray-900 dark:text-white text-sm font-medium space-y-3">
                 <li>
-                    <a href="{{route("home")}}"class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
+                    <a href="{{route("home")}}" class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
                 </li>
                 <li>
-                    <a href="{{route("apartments.index")}}" class="hover:text-primary-700 dark:hover:text-primary-500">Browse Apartments</a>
+                    <a href="{{route("apartments.index")}}" class="hover:text-primary-700 dark:hover:text-primary-500">Browse
+                        Apartments</a>
                 </li>
-{{--                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Gift Ideas</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Games</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Electronics</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home & Garden</a>
-                </li>--}}
+                {{--                <li>
+                                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Gift Ideas</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Games</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Electronics</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home & Garden</a>
+                                </li>--}}
             </ul>
         </div>
 
