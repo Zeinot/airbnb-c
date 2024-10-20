@@ -16,7 +16,8 @@ class ApartmentController extends Controller
     public function index()
     {
 //        dump(Apartment::all());
-        return view("apartments.index");
+        $apartments = Apartment::paginate(1);
+        return view("apartments.index", ["apartments" => $apartments]);
     }
 
     public function admin_index()
@@ -117,34 +118,34 @@ class ApartmentController extends Controller
             "images.*.max" => "Images too large",
         ]);
 
-            DB::transaction(function () use ($request, $apartment) {
-                $apartment->title = $request->title;
-                $apartment->type = $request->type;
-                $apartment->city = $request->city;
-                $apartment->address = $request->address;
-                $apartment->description = $request->description;
-                $apartment->price = $request->price;
-                $apartment->save();
-                $images = request()->file('images');
-                $old_images = $apartment->apartment_images;
+        DB::transaction(function () use ($request, $apartment) {
+            $apartment->title = $request->title;
+            $apartment->type = $request->type;
+            $apartment->city = $request->city;
+            $apartment->address = $request->address;
+            $apartment->description = $request->description;
+            $apartment->price = $request->price;
+            $apartment->save();
+            $images = request()->file('images');
+            $old_images = $apartment->apartment_images;
 
-                foreach ($old_images as $apartment_image) {
-                    Storage::disk('public')->delete($apartment_image->path);
-                    $apartment_image->delete();
-                }
+            foreach ($old_images as $apartment_image) {
+                Storage::disk('public')->delete($apartment_image->path);
+                $apartment_image->delete();
+            }
 
-                foreach ($images as $file) {
+            foreach ($images as $file) {
 
-                    $path = $file->store('apartment_images', 'public');
-                    $apartment_image = ApartmentImages::create([
-                        "path" => $path,
-                        "apartment_id" => $apartment->id,
-                    ]);
-                }
-            });
+                $path = $file->store('apartment_images', 'public');
+                $apartment_image = ApartmentImages::create([
+                    "path" => $path,
+                    "apartment_id" => $apartment->id,
+                ]);
+            }
+        });
 //            dd($request->all(),  $apartment);
         return redirect(route("apartments.admin_index"));
-        }
+    }
 
     /**
      * Remove the specified resource from storage.
