@@ -24,7 +24,7 @@ class ApartmentController extends Controller
 
 //        dump(Apartment::all());
         $apartments = Apartment::paginate(1);
-        dump($request->all());
+//        dump($request->all());
         return view("apartments.index", [
             "apartments" => $apartments,
             "search" => $search,
@@ -177,7 +177,7 @@ class ApartmentController extends Controller
                 $apartment_image->delete();
             }
             $apartment->delete();
-            dump("success");
+//            dump("success");
         });
 
         return redirect(route("apartments.admin_index"));

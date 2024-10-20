@@ -1,17 +1,17 @@
-@dump(
+{{--@dump(
 $search,
 $type,
 $city,
 $address,
 $min_price,
 $max_price,
-);
+);--}}
 @extends("layouts.custom.home")
 @section("content")
     {{--    @dump(\App\Models\Apartment::all())--}}
     {{--    Apartments index--}}
 
-    <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
+    <section class="bg-gray-50 py-4 antialiased dark:bg-gray-900 md:py-6">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <!-- Heading & Filters -->
             <div class="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8">
