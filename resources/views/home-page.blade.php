@@ -1,6 +1,7 @@
 @extends('layouts.custom.home')
 @section('content')
     {{--  hero section --}}
+{{--<img src="{{Storage::disk('public')->url('img/1.webp')}}"/>--}}
     <section class="bg-white antialiased">
         <div class="mx-auto max-w-screen-2xl">
             <div id="slide-carousel" class="relative w-full" data-carousel="slide">
@@ -9,7 +10,10 @@
                     <!-- Item 1 -->
                     <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                         <div
-                            class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-image.jpg')] bg-cover bg-center bg-no-repeat">
+                            class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-cover bg-center bg-no-repeat"
+                            style="background-image: url('{{ Storage::disk('public')->url('img/1.webp') }}')"
+                        >
+                            >
                             <div
                                 class="absolute top-1/2 z-10 w-full max-w-[512px] -translate-y-1/2 px-4 sm:left-1/2 sm:-translate-x-1/2 lg:-translate-x-8 lg:px-0">
 {{--                                <a href="#"--}}
@@ -37,7 +41,8 @@
                     <!-- Item 2 -->
                     <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                         <div
-                            class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/fashion-image.jpg')] bg-cover bg-center bg-no-repeat">
+                            class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/fashion-image.jpg')] bg-cover bg-center bg-no-repeat"
+                            style="background-image: url('{{ Storage::disk('public')->url('img/2.webp') }}')">
                             <div
                                 class="absolute top-1/2 z-10 w-full max-w-[512px] -translate-y-1/2 px-4 sm:right-1/2 sm:translate-x-1/2 lg:translate-x-8 lg:px-0">
 {{--                                <span--}}
@@ -67,7 +72,8 @@
                     <!-- Item 3 -->
                     <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                         <div
-                            class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/gaming-image.jpg')] bg-cover bg-center bg-no-repeat">
+                            class="absolute left-1/2 top-1/2 block h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[url('https://flowbite.s3.amazonaws.com/blocks/e-commerce/gaming-image.jpg')] bg-cover bg-center bg-no-repeat"
+                            style="background-image: url('{{ Storage::disk('public')->url('img/6.webp') }}')">
                             <div
                                 class="absolute top-1/2 z-10 w-full max-w-[512px] -translate-y-1/2 px-4 sm:left-1/2 sm:-translate-x-1/2 lg:-translate-x-8 lg:px-0">
 {{--                                <a href="#"--}}
@@ -161,12 +167,12 @@
                     and quick.</p>
             </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
-                <img class="w-full rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
+                <img class="h-full rounded-lg object-cover"
+                    src="{{ Storage::disk('public')->url('img/4.webp') }}"
                     alt="office content 1">
-                <img class="mt-4 w-full lg:mt-10 rounded-lg"
-                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
-                    alt="office content 2">
+                <img class="mt-4 w-full lg:mt-10 rounded-lg object-cover"
+                     src="{{ Storage::disk('public')->url('img/3.webp') }}"
+                     alt="office content 2">
             </div>
         </div>
     </section>
@@ -256,12 +262,12 @@
     <section class="bg-white dark:bg-gray-900">
         <div
             class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <img class="w-full dark:hidden"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg"
+            <img class="w-full dark:hidden rounded-lg"
+                src="{{ Storage::disk('public')->url('img/5.webp') }}"
                 alt="dashboard image">
-            <img class="w-full hidden dark:block"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"
-                alt="dashboard image">
+{{--            <img class="w-full hidden dark:block"--}}
+{{--                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"--}}
+{{--                alt="dashboard image">--}}
             <div class="mt-4 md:mt-0">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's create more
                     tools and ideas that brings us together.</h2>
