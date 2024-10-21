@@ -22,8 +22,6 @@ class ApartmentController extends Controller
         $min_price = $request->min_price;
         $max_price = $request->max_price;
         $query = Apartment::query();
-//        dump(Apartment::all());
-//        dump($query);
         if (isset($search)) {
             $query = $query->whereAny(['title', 'type',
                 'city',
