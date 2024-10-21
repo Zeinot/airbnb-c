@@ -32,13 +32,13 @@ class ApartmentController extends Controller
                 'price',], "like", "%$search%");
         }
         if (isset($type)) {
-            $query = $query->whereLike('type',"%$type%");
+            $query = $query->whereLike('type', "%$type%");
         }
         if (isset($city)) {
-            $query = $query->whereLike('city',"%$city%");
+            $query = $query->whereLike('city', "%$city%");
         }
         if (isset($address)) {
-            $query = $query->whereLike('city',"%$address%");
+            $query = $query->whereLike('city', "%$address%");
         }
         if (isset($min_price)) {
             $query = $query->where('min_price', '>=', $min_price);
