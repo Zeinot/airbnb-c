@@ -142,7 +142,7 @@ $max_price,
                         class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
                         <div class="h-56 w-full">
                             <a href="{{route("apartments.show", $apartment)}}">
-                                <img class="mx-auto h-full dark:hidden"
+                                <img class="mx-auto object-cover h-full dark:hidden"
                                      src="{{Storage::disk('public')->url($apartment->apartment_images[0]->path) }}"
                                      alt=""/>
                                 {{--                                <img class="mx-auto hidden h-full dark:block"
@@ -193,8 +193,7 @@ $max_price,
                             </div>
 
                             <a href="{{route("apartments.show", $apartment)}}"
-                               class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">Apple
-                                iMac 27", 1TB HDD, Retina 5K Display, M3 Max</a>
+                               class="text-lg capitalize font-semibold leading-tight text-gray-900 hover:underline dark:text-white">{{$apartment->title}}</a>
 
                             <div class="mt-2 flex items-center gap-2">
                                 {{--                                <div class="flex items-center">
