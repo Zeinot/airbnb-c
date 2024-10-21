@@ -1,11 +1,11 @@
-{{--@dump(
+@dump(
 $search,
 $type,
 $city,
 $address,
 $min_price,
 $max_price,
-);--}}
+)
 @extends("layouts.custom.home")
 @section("content")
     {{--    @dump(\App\Models\Apartment::all())--}}
@@ -255,7 +255,7 @@ $max_price,
 
                             <div class="mt-4 flex items-center justify-between gap-4">
                                 <p class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">
-                                    $1,699</p>
+                                    ${{$apartment->price}}</p>
 
                                 <a href="{{route("apartments.show", $apartment)}}"
                                    class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4  focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
@@ -1668,7 +1668,7 @@ $max_price,
                                             Price For Type ($)</label>
                                     </div>
                                     <div class="relative z-0 w-full mb-5 group">
-                                        <input type="number" name="max_price"  value="{{$max_price}}"  id="floating_email"
+                                        <input type="number" name="max_price" value="{{$max_price}}" id="floating_email"
                                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-primary-500 focus:outline-none focus:ring-0 focus:border-primary-600 peer"
                                                placeholder=" "/>
                                         <label for="floating_email"
