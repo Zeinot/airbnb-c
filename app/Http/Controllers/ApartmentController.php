@@ -21,10 +21,43 @@ class ApartmentController extends Controller
         $address = $request->address;
         $min_price = $request->min_price;
         $max_price = $request->max_price;
-
+        $query = Apartment::query();
 //        dump(Apartment::all());
-        $apartments = Apartment::paginate(1);
-//        dump($request->all());
+//        dump($query);
+        if (isset($search)) {
+            $query = $query->whereAny(['title', 'type',
+                'city',
+                'address',
+                'description',
+                'price',], "like", "%$search%");
+            dump($query);
+        }
+        if (isset($type)) {
+            $query = $query->whereLike('type', '%' . $type . '%');
+            dump($query);
+        }
+
+        if (isset($city)) {
+            $query = $query->whereLike('city', '%' . $city . '%');
+            dump($query);
+        }
+        if (isset($address)) {
+            $query = $query->whereLike('city', '%' . $address . '%');
+            dump($query);
+        }
+        if (isset($min_price)) {
+            $query = $query->where('min_price', '>=', $min_price);
+            dump($query);
+        }
+        if (isset($max_price)) {
+            $query = $query->where('max_price', '<=', $max_price);
+            dump($query);
+        }
+
+
+        dump("arrived");
+        $apartments = $query->paginate(1);
+        dump($apartments, $query );
         return view("apartments.index", [
             "apartments" => $apartments,
             "search" => $search,
@@ -55,7 +88,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(request()->all());
+        // dump(request()->all());
         $request->validate([
             "title" => "required|min:25|max:80",
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
@@ -116,7 +149,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-        // dd( $old_images = $apartment->apartment_images);
+        // dump( $old_images = $apartment->apartment_images);
         $request->validate([
             "title" => "required|min:25|max:80",
             "type" => "required|in:Daily,Weekly,Monthly,Yearly",
@@ -159,7 +192,7 @@ class ApartmentController extends Controller
                 ]);
             }
         });
-//            dd($request->all(),  $apartment);
+//            dump($request->all(),  $apartment);
         return redirect(route("apartments.admin_index"));
     }
 
