@@ -30,34 +30,23 @@ class ApartmentController extends Controller
                 'address',
                 'description',
                 'price',], "like", "%$search%");
-            dump($query);
         }
         if (isset($type)) {
             $query = $query->whereLike('type', '%' . $type . '%');
-            dump($query);
         }
-
         if (isset($city)) {
             $query = $query->whereLike('city', '%' . $city . '%');
-            dump($query);
         }
         if (isset($address)) {
             $query = $query->whereLike('city', '%' . $address . '%');
-            dump($query);
         }
         if (isset($min_price)) {
             $query = $query->where('min_price', '>=', $min_price);
-            dump($query);
         }
         if (isset($max_price)) {
             $query = $query->where('max_price', '<=', $max_price);
-            dump($query);
         }
-
-
-        dump("arrived");
         $apartments = $query->paginate(1);
-        dump($apartments, $query );
         return view("apartments.index", [
             "apartments" => $apartments,
             "search" => $search,
