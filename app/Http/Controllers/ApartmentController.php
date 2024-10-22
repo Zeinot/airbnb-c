@@ -15,12 +15,15 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
+        dump($request->page);
         $search = $request->search;
         $type = $request->type;
         $city = $request->city;
         $address = $request->address;
         $min_price = $request->min_price;
         $max_price = $request->max_price;
+        $ASC = $request->ASC;
+        $DESC = $request->DESC;
         $query = Apartment::query();
         if (isset($search)) {
             $query = $query->whereAny(['title', 'type',
@@ -39,12 +42,17 @@ class ApartmentController extends Controller
             $query = $query->whereLike('city', "%$address%");
         }
         if (isset($min_price)) {
-            $query = $query->where('min_price', '>=', $min_price);
+            $query = $query->where('price', '>=', $min_price);
         }
         if (isset($max_price)) {
-            $query = $query->where('max_price', '<=', $max_price);
+            $query = $query->where('price', '<=', $max_price);
         }
-        $apartments = $query->paginate(1);
+        if ($ASC) {
+            $query = $query->orderBy('price', 'ASC');
+        } else if ($DESC) {
+            $query = $query->orderBy('price', 'DESC');
+        }
+        $apartments = $query->paginate(15);
         return view("apartments.index", [
             "apartments" => $apartments,
             "search" => $search,
@@ -53,6 +61,8 @@ class ApartmentController extends Controller
             "address" => $address,
             "min_price" => $min_price,
             "max_price" => $max_price,
+            "ASC" => $ASC,
+            "DESC" => $DESC,
         ]);
     }
 
