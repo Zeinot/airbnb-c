@@ -39,10 +39,10 @@ class ApartmentController extends Controller
             $query = $query->whereLike('city', "%$address%");
         }
         if (isset($min_price)) {
-            $query = $query->where('min_price', '>=', $min_price);
+            $query = $query->where('price', '>=', $min_price);
         }
         if (isset($max_price)) {
-            $query = $query->where('max_price', '<=', $max_price);
+            $query = $query->where('price', '<=', $max_price);
         }
         $apartments = $query->paginate(1);
         return view("apartments.index", [
