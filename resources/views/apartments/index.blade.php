@@ -157,9 +157,7 @@ $DESC, request()->r
                 @foreach($apartments as $apartment)
                    <div>
                        <div
-                           class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800
-                           bg-green-950
-                           ">
+                           class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 bg-green-950">
                            <div class="h-56 w-full">
                                <a href="{{route("apartments.show", $apartment)}}">
                                    <img class="mx-auto object-cover h-full dark:hidden"
