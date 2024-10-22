@@ -1,7 +1,7 @@
 @extends('layouts.custom.home')
 @section('content')
     {{--  hero section --}}
-{{--<img src="{{Storage::disk('public')->url('img/1.webp')}}"/>--}}
+    {{--<img src="{{Storage::disk('public')->url('img/1.webp')}}"/>--}}
     <section class="bg-white antialiased">
         <div class="mx-auto max-w-screen-2xl">
             <div id="slide-carousel" class="relative w-full" data-carousel="slide">
@@ -16,24 +16,27 @@
                             >
                             <div
                                 class="absolute top-1/2 z-10 w-full max-w-[512px] -translate-y-1/2 px-4 sm:left-1/2 sm:-translate-x-1/2 lg:-translate-x-8 lg:px-0">
-{{--                                <a href="#"--}}
-{{--                                    class="mb-5 inline-flex items-center justify-between rounded-full bg-white bg-opacity-10 px-1 py-1 pr-4 text-sm text-white hover:bg-opacity-20"--}}
-{{--                                    role="alert">--}}
-{{--                                    <span--}}
-{{--                                        class="mr-3 rounded-xl bg-white bg-opacity-30 px-4 py-1 text-xs font-medium">Sale</span>--}}
-{{--                                    <span class="mr-1 text-sm font-medium">Up to 30% OFF if you order today</span>--}}
-{{--                                    <svg class="h-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                        width="24" height="24" fill="none" viewBox="0 0 24 24">--}}
-{{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
-{{--                                            stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />--}}
-{{--                                    </svg>--}}
-{{--                                </a>--}}
-                                <h2 class="mb-3 text-3xl font-extrabold leading-none text-white lg:text-5xl">Find Your Perfect Stay.
+                                {{--                                <a href="#"--}}
+                                {{--                                    class="mb-5 inline-flex items-center justify-between rounded-full bg-white bg-opacity-10 px-1 py-1 pr-4 text-sm text-white hover:bg-opacity-20"--}}
+                                {{--                                    role="alert">--}}
+                                {{--                                    <span--}}
+                                {{--                                        class="mr-3 rounded-xl bg-white bg-opacity-30 px-4 py-1 text-xs font-medium">Sale</span>--}}
+                                {{--                                    <span class="mr-1 text-sm font-medium">Up to 30% OFF if you order today</span>--}}
+                                {{--                                    <svg class="h-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
+                                {{--                                        width="24" height="24" fill="none" viewBox="0 0 24 24">--}}
+                                {{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
+                                {{--                                            stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />--}}
+                                {{--                                    </svg>--}}
+                                {{--                                </a>--}}
+                                <h2 class="mb-3 text-3xl font-extrabold leading-none text-white lg:text-5xl">Find Your
+                                    Perfect Stay.
                                 </h2>
-                                <p class="mb-5 text-gray-200">Experience unforgettable trips in unique homes and destinations.
-                                    Our diverse range of properties ensures you'll find the perfect match for your travel style.</p>
+                                <p class="capitalize mb-5 text-gray-200">Experience unforgettable trips in unique homes and
+                                    destinations.
+                                    Our diverse range of properties ensures you'll find the perfect match for your
+                                    travel style.</p>
                                 <a href="{{route("apartments.index")}}"
-                                    class="inline-flex rounded-lg bg-primary-700 px-5 py-3 text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">Browse</a>
+                                   class="inline-flex rounded-lg bg-primary-700 px-5 py-3 text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">Browse</a>
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
                         </div>
@@ -45,25 +48,28 @@
                             style="background-image: url('{{ Storage::disk('public')->url('img/2.webp') }}')">
                             <div
                                 class="absolute top-1/2 z-10 w-full max-w-[512px] -translate-y-1/2 px-4 sm:right-1/2 sm:translate-x-1/2 lg:translate-x-8 lg:px-0">
-{{--                                <span--}}
-{{--                                    class="mb-5 inline-block rounded bg-yellow-100 px-2.5 py-0.5 text-sm font-medium text-yellow-800">New--}}
-{{--                                    arrival</span>--}}
-                                <h2 class="mb-3 text-3xl font-extrabold leading-none text-white lg:text-5xl">Homes Away From Home.</h2>
-                                <p class="mb-5 text-gray-200">Discover cozy, charming, and one-of-a-kind stays for every traveler.
-                                    Whether you’re looking for a rustic cabin in the woods, a beachside bungalow, or a luxurious penthouse, we have it all to make your journey memorable.</p>
+                                {{--                                <span--}}
+                                {{--                                    class="mb-5 inline-block rounded bg-yellow-100 px-2.5 py-0.5 text-sm font-medium text-yellow-800">New--}}
+                                {{--                                    arrival</span>--}}
+                                <h2 class="mb-3 text-3xl font-extrabold leading-none text-white lg:text-5xl">Homes Away
+                                    From Home.</h2>
+                                <p class="capitalize mb-5 text-gray-200">Discover cozy, charming, and one-of-a-kind stays for every
+                                    traveler.
+                                    Whether you’re looking for a rustic cabin in the woods, a beachside bungalow, or a
+                                    luxurious penthouse, we have it all to make your journey memorable.</p>
                                 <div class="flex items-center">
                                     <a href="{{route("apartments.index")}}"
                                        class="inline-flex rounded-lg bg-primary-700 px-5 py-3 text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">Browse</a>
 
-{{--                                    <a href="#"--}}
-{{--                                        class="inline-flex items-center rounded-lg bg-white bg-opacity-40 px-5 py-3 text-base font-medium text-white hover:bg-opacity-50 focus:outline-none focus:ring-4 focus:ring-gray-300"><svg--}}
-{{--                                            class="me-1 h-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">--}}
-{{--                                            <path fill-rule="evenodd"--}}
-{{--                                                d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"--}}
-{{--                                                clip-rule="evenodd" />--}}
-{{--                                        </svg>--}}
-{{--                                        View catalog</a>--}}
+                                    {{--                                    <a href="#"--}}
+                                    {{--                                        class="inline-flex items-center rounded-lg bg-white bg-opacity-40 px-5 py-3 text-base font-medium text-white hover:bg-opacity-50 focus:outline-none focus:ring-4 focus:ring-gray-300"><svg--}}
+                                    {{--                                            class="me-1 h-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
+                                    {{--                                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">--}}
+                                    {{--                                            <path fill-rule="evenodd"--}}
+                                    {{--                                                d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"--}}
+                                    {{--                                                clip-rule="evenodd" />--}}
+                                    {{--                                        </svg>--}}
+                                    {{--                                        View catalog</a>--}}
                                 </div>
                             </div>
                             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -76,34 +82,37 @@
                             style="background-image: url('{{ Storage::disk('public')->url('img/6.webp') }}')">
                             <div
                                 class="absolute top-1/2 z-10 w-full max-w-[512px] -translate-y-1/2 px-4 sm:left-1/2 sm:-translate-x-1/2 lg:-translate-x-8 lg:px-0">
-{{--                                <a href="#"--}}
-{{--                                    class="mb-5 inline-flex items-center justify-between rounded-full bg-white bg-opacity-10 px-1 py-1 pr-4 text-sm text-white hover:bg-opacity-20"--}}
-{{--                                    role="alert">--}}
-{{--                                    <span--}}
-{{--                                        class="mr-3 rounded-xl bg-white bg-opacity-30 px-4 py-1 text-xs font-medium">Offer</span>--}}
-{{--                                    <span class="mr-1 text-sm font-medium">Save $25 when you spend $250 In-Store or--}}
-{{--                                        Online</span>--}}
-{{--                                    <svg class="h-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                        width="24" height="24" fill="none" viewBox="0 0 24 24">--}}
-{{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
-{{--                                            stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />--}}
-{{--                                    </svg>--}}
-{{--                                </a>--}}
-                                <h2 class="mb-3 text-3xl font-extrabold leading-none text-white lg:text-5xl">Travel with Comfort.</h2>
-                                <p class="mb-5 text-gray-200">Find accommodations that fit your needs, desires, and adventures.
-                                    Our curated selection of homes offers the perfect blend of comfort, style, and convenience,
+                                {{--                                <a href="#"--}}
+                                {{--                                    class="mb-5 inline-flex items-center justify-between rounded-full bg-white bg-opacity-10 px-1 py-1 pr-4 text-sm text-white hover:bg-opacity-20"--}}
+                                {{--                                    role="alert">--}}
+                                {{--                                    <span--}}
+                                {{--                                        class="mr-3 rounded-xl bg-white bg-opacity-30 px-4 py-1 text-xs font-medium">Offer</span>--}}
+                                {{--                                    <span class="mr-1 text-sm font-medium">Save $25 when you spend $250 In-Store or--}}
+                                {{--                                        Online</span>--}}
+                                {{--                                    <svg class="h-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
+                                {{--                                        width="24" height="24" fill="none" viewBox="0 0 24 24">--}}
+                                {{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
+                                {{--                                            stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />--}}
+                                {{--                                    </svg>--}}
+                                {{--                                </a>--}}
+                                <h2 class="mb-3 text-3xl font-extrabold leading-none text-white lg:text-5xl">Travel with
+                                    Comfort.</h2>
+                                <p class="capitalize mb-5 text-gray-200">Find accommodations that fit your needs, desires, and
+                                    adventures.
+                                    Our curated selection of homes offers the perfect blend of comfort, style, and
+                                    convenience,
                                     ensuring you feel right at home.</p>
-{{--                                <a href="#"--}}
-{{--                                    class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-3 text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"><svg--}}
-{{--                                        class="me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
-{{--                                        width="24" height="24" fill="none" viewBox="0 0 24 24">--}}
-{{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
-{{--                                            stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />--}}
-{{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
-{{--                                            stroke-width="2"--}}
-{{--                                            d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z" />--}}
-{{--                                    </svg>--}}
-{{--                                    Find a store</a>--}}
+                                {{--                                <a href="#"--}}
+                                {{--                                    class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-3 text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"><svg--}}
+                                {{--                                        class="me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"--}}
+                                {{--                                        width="24" height="24" fill="none" viewBox="0 0 24 24">--}}
+                                {{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
+                                {{--                                            stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />--}}
+                                {{--                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"--}}
+                                {{--                                            stroke-width="2"--}}
+                                {{--                                            d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z" />--}}
+                                {{--                                    </svg>--}}
+                                {{--                                    Find a store</a>--}}
 
                                 <a href="{{route("apartments.index")}}"
                                    class="inline-flex rounded-lg bg-primary-700 px-5 py-3 text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300">Browse</a>
@@ -116,35 +125,35 @@
                 <!-- Slider indicators -->
                 <div class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
                     <button type="button" class="h-3 w-3 rounded-full dark:!bg-white/50 dark:hover:!bg-white"
-                        aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                            aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
                     <button type="button" class="h-3 w-3 rounded-full dark:!bg-white/50 dark:hover:!bg-white"
-                        aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                            aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
                     <button type="button" class="h-3 w-3 rounded-full dark:!bg-white/50 dark:hover:!bg-white"
-                        aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                            aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
                 </div>
                 <!-- Slider controls -->
                 <button type="button"
-                    class="group absolute start-0 top-0 z-30 hidden h-full cursor-pointer items-center justify-center px-4 focus:outline-none md:flex"
-                    data-carousel-prev>
+                        class="group absolute start-0 top-0 z-30 hidden h-full cursor-pointer items-center justify-center px-4 focus:outline-none md:flex"
+                        data-carousel-prev>
                     <span
                         class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white">
                         <svg class="h-4 w-4 text-white rtl:rotate-180" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M5 1 1 5l4 4" />
+                                  d="M5 1 1 5l4 4"/>
                         </svg>
                         <span class="sr-only">Previous</span>
                     </span>
                 </button>
                 <button type="button"
-                    class="group absolute end-0 top-0 z-30 hidden h-full cursor-pointer items-center justify-center px-4 focus:outline-none md:flex"
-                    data-carousel-next>
+                        class="group absolute end-0 top-0 z-30 hidden h-full cursor-pointer items-center justify-center px-4 focus:outline-none md:flex"
+                        data-carousel-next>
                     <span
                         class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 group-hover:bg-white/50 group-focus:outline-none group-focus:ring-4 group-focus:ring-white">
                         <svg class="h-4 w-4 text-white rtl:rotate-180" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 9 4-4-4-4" />
+                                  d="m1 9 4-4-4-4"/>
                         </svg>
                         <span class="sr-only">Next</span>
                     </span>
@@ -158,18 +167,19 @@
     <section class="bg-white dark:bg-gray-900">
         <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
             <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">We didn't reinvent
-                    the wheel</h2>
-                <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small
-                    enough to be simple and quick, but big enough to deliver the scope you want at the pace you need. Small
-                    enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-                <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple
-                    and quick.</p>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Experience Home
+                    Beyond Walls</h2>
+                <p class="capitalize mb-4 capitalize">We're architects of connection, blending strategy, design, and development. Visionaries
+                    and problem solvers. Nimble enough for agility, yet expansive enough to deliver the magnitude you
+                    need when you need it. Nimble enough for agility, yet expansive enough to deliver the magnitude you
+                    need. </p>
+                <p class="capitalize capitalize">We're architects of connection, blending strategy, design, and development. Visionaries and problem
+                    solvers. Nimble enough for agility.</p>
             </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
                 <img class="h-full rounded-lg object-cover"
-                    src="{{ Storage::disk('public')->url('img/4.webp') }}"
-                    alt="office content 1">
+                     src="{{ Storage::disk('public')->url('img/4.webp') }}"
+                     alt="office content 1">
                 <img class="mt-4 w-full lg:mt-10 rounded-lg object-cover"
                      src="{{ Storage::disk('public')->url('img/3.webp') }}"
                      alt="office content 2">
@@ -183,73 +193,75 @@
     <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-16">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <div class="mb-4 text-center md:mb-8">
-                <h2 class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Why Flowbite
-                    Shop?</h2>
-                <p class="text-base text-gray-500 dark:text-gray-400 md:text-xl">Simplify the entire ordering process from
-                    search to fulfillment, all in one platform.</p>
+                <h2 class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Why Choose Our Service?</h2>
+                <p class="capitalize text-base text-gray-500 dark:text-gray-400 md:text-xl"> Streamline your experience from discovery to delivery, all under one roof.</p>
             </div>
 
             <div class="grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
                 <div
                     class="rounded-lg border border-gray-200 bg-white p-4 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
                     <svg class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 12a28.076 28.076 0 0 1-1.091 9M7.231 4.37a8.994 8.994 0 0 1 12.88 3.73M2.958 15S3 14.577 3 12a8.949 8.949 0 0 1 1.735-5.307m12.84 3.088A5.98 5.98 0 0 1 18 12a30 30 0 0 1-.464 6.232M6 12a6 6 0 0 1 9.352-4.974M4 21a5.964 5.964 0 0 1 1.01-3.328 5.15 5.15 0 0 0 .786-1.926m8.66 2.486a13.96 13.96 0 0 1-.962 2.683M7.5 19.336C9 17.092 9 14.845 9 12a3 3 0 1 1 6 0c0 .749 0 1.521-.031 2.311M12 12c0 3 0 6-2 9" />
+                              d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
                     </svg>
-                    <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Enjoy secure payments</h3>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Pay for your order in over 20 currencies via 20+
-                        secure payment methods, including flexible payment terms.</p>
-                    <a href="#"
-                        class="flex items-center justify-center font-medium text-primary-700 hover:underline dark:text-primary-500">
-                        How to make the payments
+
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Best Quality Service </h3>
+                    <p class="capitalize mb-4 text-gray-500 dark:text-gray-400 capitalize">Benefit from our top-tier services, providing excellence in every interaction. Our team ensures precision, care, and unmatched support.
+                    </p>
+                    <a href="{{route("apartments.index")}}"
+                       class="flex items-center justify-center font-medium text-primary-700 hover:underline dark:text-primary-500">
+                        Browse
                         <svg class="ms-1 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" fill="none" viewBox="0 0 24 24">
+                             height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 12H5m14 0-4 4m4-4-4-4" />
+                                  d="M19 12H5m14 0-4 4m4-4-4-4"/>
                         </svg>
                     </a>
                 </div>
                 <div
                     class="rounded-lg border border-gray-200 bg-white p-4 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
                     <svg class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                        viewBox="0 0 24 24">
+                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                         viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
+                              d="M18 17v2M12 5.5V10m-6 7v2m15-2v-4c0-1.6569-1.3431-3-3-3H6c-1.65685 0-3 1.3431-3 3v4h18Zm-2-7V8c0-1.65685-1.3431-3-3-3H8C6.34315 5 5 6.34315 5 8v2h14Z"/>
                     </svg>
-                    <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Comprehensive logistics</h3>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Get your logistics needs fulfilled with best
-                        solutions, with real-time tracking for 40,000+ routes across 208 countries.</p>
-                    <a href="#"
-                        class="flex items-center justify-center font-medium text-primary-700 hover:underline dark:text-primary-500">
-                        Get premium delivery
+
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Best Comfort Guaranteed</h3>
+                    <p class="capitalize mb-4 text-gray-500 dark:text-gray-400 capitalize">Unparalleled comfort with our solutions designed for your utmost convenience. Seamless and enjoyable experience.
+                    </p>
+                    <a href="{{route("apartments.index")}}"
+                       class="flex items-center justify-center font-medium text-primary-700 hover:underline dark:text-primary-500">
+                        Browse
                         <svg class="ms-1 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" fill="none" viewBox="0 0 24 24">
+                             height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 12H5m14 0-4 4m4-4-4-4" />
+                                  d="M19 12H5m14 0-4 4m4-4-4-4"/>
                         </svg>
                     </a>
                 </div>
                 <div
                     class="rounded-lg border border-gray-200 bg-white p-4 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
                     <svg class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                        viewBox="0 0 24 24">
+                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                         viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z" />
+                              d="m8.032 12 1.984 1.984 4.96-4.96m4.55 5.272.893-.893a1.984 1.984 0 0 0 0-2.806l-.893-.893a1.984 1.984 0 0 1-.581-1.403V7.04a1.984 1.984 0 0 0-1.984-1.984h-1.262a1.983 1.983 0 0 1-1.403-.581l-.893-.893a1.984 1.984 0 0 0-2.806 0l-.893.893a1.984 1.984 0 0 1-1.403.581H7.04A1.984 1.984 0 0 0 5.055 7.04v1.262c0 .527-.209 1.031-.581 1.403l-.893.893a1.984 1.984 0 0 0 0 2.806l.893.893c.372.372.581.876.581 1.403v1.262a1.984 1.984 0 0 0 1.984 1.984h1.262c.527 0 1.031.209 1.403.581l.893.893a1.984 1.984 0 0 0 2.806 0l.893-.893a1.985 1.985 0 0 1 1.403-.581h1.262a1.984 1.984 0 0 0 1.984-1.984V15.7c0-.527.209-1.031.581-1.403Z"/>
                     </svg>
-                    <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Handle everything effortlessly
+
+
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Complete Customer Protection
                     </h3>
-                    <p class="mb-4 text-gray-500 dark:text-gray-400">Check order status, manage suppliers, track payments
-                        and shipments, and contact after-sales support all via My Account.</p>
-                    <a href="#"
-                        class="flex items-center justify-center font-medium text-primary-700 hover:underline dark:text-primary-500">
-                        Activate your account
+                    <p class="capitalize mb-4 text-gray-500 dark:text-gray-400">Trust in our comprehensive protection policies, safeguarding your interests from start to finish. Your peace of mind is our priority.
+                    </p>
+                    <a href="{{route("apartments.index")}}"
+                       class="flex items-center justify-center font-medium text-primary-700 hover:underline dark:text-primary-500">
+                        Browse
                         <svg class="ms-1 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" fill="none" viewBox="0 0 24 24">
+                             height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 12H5m14 0-4 4m4-4-4-4" />
+                                  d="M19 12H5m14 0-4 4m4-4-4-4"/>
                         </svg>
                     </a>
                 </div>
@@ -263,18 +275,15 @@
         <div
             class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <img class="w-full dark:hidden rounded-lg"
-                src="{{ Storage::disk('public')->url('img/5.webp') }}"
+                 src="{{ Storage::disk('public')->url('img/5.webp') }}"
                 alt="dashboard image">
 {{--            <img class="w-full hidden dark:block"--}}
 {{--                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg"--}}
 {{--                alt="dashboard image">--}}
             <div class="mt-4 md:mt-0">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's create more
-                    tools and ideas that brings us together.</h2>
-                <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Flowbite helps you connect with
-                    friends and communities of people who share your interests. Connecting with your friends and family as
-                    well as discovering new ones is easy with features like Groups.</p>
-                <a href="#"
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Discover Your Perfect Stay</h2>
+                <p class="capitalize mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Connecting you to homes, communities, and experiences that fit your lifestyle. Whether finding a cozy retreat or a vibrant neighborhood, our platform makes it simple to explore and enjoy.</p>
+                <a href="{{route("apartments.index")}}"
                     class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
                     Get started
                     <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -293,7 +302,7 @@
         <div class="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
             <h2
                 class="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl">
-                You’ll be in good company</h2>
+                Our Trusted Partners </h2>
             <div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
                 <a href="#" class="flex justify-center items-center">
                     <svg class="h-9 hover:text-gray-900 dark:hover:text-white" viewBox="0 0 125 35" fill="currentColor"

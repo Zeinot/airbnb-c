@@ -49,13 +49,9 @@
                     </svg>
                     <span class="sr-only">Toggle sidebar</span>
                 </button>
-                <a href="{{ route('apartments.admin_index') }}" class="flex items-center justify-between mr-4">
-                    <img
-                        src="https://flowbite.s3.amazonaws.com/logo.svg"
-                        class="mr-3 h-8"
-                        alt="Flowbite Logo"
-                    />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dashboard</span>
+                <a href="{{route("home")}}" class="flex items-center">
+                    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8" alt="Logo"/>
+                    <span class="self-center text-2xl font-bold whitespace-nowrap dark:text-white">Harry-NB</span>
                 </a>
                 {{--                    <form action="#" method="GET" class="hidden md:block md:pl-2">
                                         <label for="topbar-search" class="sr-only">Search</label>

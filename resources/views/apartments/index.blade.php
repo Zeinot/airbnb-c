@@ -1,13 +1,13 @@
-@dump(
-$search,
-$type,
-$city,
-$address,
-$min_price,
-$max_price,
-$ASC,
-$DESC, request()->r
-)
+{{--@dump(--}}
+{{--$search,--}}
+{{--$type,--}}
+{{--$city,--}}
+{{--$address,--}}
+{{--$min_price,--}}
+{{--$max_price,--}}
+{{--$ASC,--}}
+{{--$DESC, request()->r--}}
+{{--)--}}
 @extends("layouts.custom.home")
 @section("content")
     {{--    @dump(\App\Models\Apartment::all())--}}
@@ -25,8 +25,8 @@ $DESC, request()->r
                $order
                );
     @endphp
-    <a href="{{ route('apartments.index',[$order, "ASC" =>"true"]) }}">order increasing price</a><br/>
-    <a href="{{ route('apartments.index',[$order, "DESC" =>"true"]) }}">order decreasing price</a>
+{{--    <a href="{{ route('apartments.index',[$order, "ASC" =>"true"]) }}">order increasing price</a><br/>--}}
+{{--    <a href="{{ route('apartments.index',[$order, "DESC" =>"true"]) }}">order decreasing price</a>--}}
     <section class="bg-gray-50 py-4 antialiased dark:bg-gray-900 md:py-6">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <!-- Heading & Filters -->
@@ -72,11 +72,11 @@ $DESC, request()->r
                     </nav>
                     <h2 class="mt-3 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Apartments</h2>
                     <div class="mt-3">
-                        @if($search   ||$type
-                                        ||$city
-                                        ||$min_price
-                                        ||$max_price
-                                        ||$address)
+                    @if($search   ||$type
+                                    ||$city
+                                    ||$min_price
+                                    ||$max_price
+                                    ||$address)
                             <span
                                 class="text-nowrap bg-primary-100 text-primary-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-primary-900 dark:text-primary-300  ">Filters Applied</span>
                         @endif
