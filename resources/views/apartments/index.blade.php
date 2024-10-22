@@ -1,13 +1,13 @@
-@dump(
-$search,
-$type,
-$city,
-$address,
-$min_price,
-$max_price,
-$ASC,
-$DESC, request()->r
-)
+{{--@dump(--}}
+{{--$search,--}}
+{{--$type,--}}
+{{--$city,--}}
+{{--$address,--}}
+{{--$min_price,--}}
+{{--$max_price,--}}
+{{--$ASC,--}}
+{{--$DESC, request()->r--}}
+{{--)--}}
 @extends("layouts.custom.home")
 @section("content")
     {{--    @dump(\App\Models\Apartment::all())--}}
