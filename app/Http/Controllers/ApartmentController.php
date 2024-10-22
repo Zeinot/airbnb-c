@@ -52,7 +52,7 @@ class ApartmentController extends Controller
         } else if ($DESC) {
             $query = $query->orderBy('price', 'DESC');
         }
-        $apartments = $query->paginate(2);
+        $apartments = $query->paginate(15);
         return view("apartments.index", [
             "apartments" => $apartments,
             "search" => $search,
