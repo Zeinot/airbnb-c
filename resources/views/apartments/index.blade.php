@@ -1217,7 +1217,7 @@ $max_price,
                                     Show more
                                 </button>--}}
                 {{--                PAGINATION HERE--}}
-                {{$apartments->links()}}
+                {{$apartments->withQueryString()->links()}}
             </div>
         </div>
         <!-- Filter modal -->
