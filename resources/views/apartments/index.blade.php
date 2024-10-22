@@ -11,6 +11,7 @@ $max_price,
     {{--    @dump(\App\Models\Apartment::all())--}}
     {{--    Apartments index--}}
 
+    <a href="{{ route('apartments.index',  str_replace("page","r", http_build_query(request()->query()))) }}">test</a>
     <section class="bg-gray-50 py-4 antialiased dark:bg-gray-900 md:py-6">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <!-- Heading & Filters -->
@@ -102,16 +103,16 @@ $max_price,
                          data-popper-placement="bottom">
                         <ul class="p-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400"
                             aria-labelledby="sortDropdownButton">
-{{--                            <li>
-                                <a href="#"
-                                   class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    The most popular </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                   class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    Newest </a>
-                            </li>--}}
+                            {{--                            <li>
+                                                            <a href="#"
+                                                               class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                                The most popular </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"
+                                                               class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                                Newest </a>
+                                                        </li>--}}
                             <li>
                                 <a href="#"
                                    class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
@@ -122,16 +123,16 @@ $max_price,
                                    class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Decreasing price </a>
                             </li>
-{{--                            <li>
-                                <a href="#"
-                                   class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    No. reviews </a>
-                            </li>--}}
-{{--                            <li>
-                                <a href="#"
-                                   class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
-                                    Discount % </a>
-                            </li>--}}
+                            {{--                            <li>
+                                                            <a href="#"
+                                                               class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                                No. reviews </a>
+                                                        </li>--}}
+                            {{--                            <li>
+                                                            <a href="#"
+                                                               class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                                Discount % </a>
+                                                        </li>--}}
                         </ul>
                     </div>
                 </div>

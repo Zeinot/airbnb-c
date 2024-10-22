@@ -15,6 +15,7 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
+        dump($request->page);
         $search = $request->search;
         $type = $request->type;
         $city = $request->city;
