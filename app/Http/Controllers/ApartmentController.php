@@ -47,7 +47,12 @@ class ApartmentController extends Controller
         if (isset($max_price)) {
             $query = $query->where('price', '<=', $max_price);
         }
-        $apartments = $query->paginate(1);
+        if ($ASC) {
+            $query = $query->orderBy('price', 'ASC');
+        } else if ($DESC) {
+            $query = $query->orderBy('price', 'DESC');
+        }
+        $apartments = $query->paginate(2);
         return view("apartments.index", [
             "apartments" => $apartments,
             "search" => $search,
