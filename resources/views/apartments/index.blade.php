@@ -5,13 +5,28 @@ $city,
 $address,
 $min_price,
 $max_price,
+$ASC,
+$DESC, request()->r
 )
 @extends("layouts.custom.home")
 @section("content")
     {{--    @dump(\App\Models\Apartment::all())--}}
     {{--    Apartments index--}}
-
-    <a href="{{ route('apartments.index',  str_replace("page","r", http_build_query(request()->query()))) }}">test</a>
+    @php
+        $order = str_replace("page","r", http_build_query(request()->query()));
+           $order = str_replace(
+               "ASC=",
+               "r=",
+               $order
+               );
+            $order = str_replace(
+               "DESC=",
+               "r=",
+               $order
+               );
+    @endphp
+    <a href="{{ route('apartments.index',[$order, "ASC" =>"true"]) }}">order increasing price</a><br/>
+    <a href="{{ route('apartments.index',[$order, "DESC" =>"true"]) }}">order decreasing price</a>
     <section class="bg-gray-50 py-4 antialiased dark:bg-gray-900 md:py-6">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <!-- Heading & Filters -->
@@ -114,12 +129,13 @@ $max_price,
                                                                 Newest </a>
                                                         </li>--}}
                             <li>
-                                <a href="#"
+                                <a href="{{ route('apartments.index',[$order, "ASC" =>true]) }}"
                                    class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Increasing price </a>
+
                             </li>
                             <li>
-                                <a href="#"
+                                <a href="{{ route('apartments.index',[$order, "DESC" =>true]) }}"
                                    class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Decreasing price </a>
                             </li>

@@ -22,6 +22,8 @@ class ApartmentController extends Controller
         $address = $request->address;
         $min_price = $request->min_price;
         $max_price = $request->max_price;
+        $ASC = $request->ASC;
+        $DESC = $request->DESC;
         $query = Apartment::query();
         if (isset($search)) {
             $query = $query->whereAny(['title', 'type',
@@ -54,6 +56,8 @@ class ApartmentController extends Controller
             "address" => $address,
             "min_price" => $min_price,
             "max_price" => $max_price,
+            "ASC" => $ASC,
+            "DESC" => $DESC,
         ]);
     }
 
