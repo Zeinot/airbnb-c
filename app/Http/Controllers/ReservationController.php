@@ -13,7 +13,7 @@ class ReservationController extends Controller
     public function index()
     {
         $reservations = Reservation::all();
-        return view('reservations.index', compact('reservations'));
+        return view('admin.reservations.index', compact('reservations'));
     }
 
     /**
@@ -21,7 +21,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        return view('reservations.create');
+        return view('admin.reservations.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class ReservationController extends Controller
 
         Reservation::create($request->all());
 
-        return redirect()->route('reservations.index')
+        return redirect()->route('admin.reservations.index')
             ->with('success', 'Réservation créée avec succès.');
     }
 
@@ -48,7 +48,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        return view('reservations.show', compact('reservation'));
+        return view('admin.reservations.show', compact('reservation'));
     }
 
     /**
@@ -56,7 +56,7 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        return view('reservations.edit', compact('reservation'));
+        return view('admin.reservations.edit', compact('reservation'));
     }
 
     /**
@@ -74,7 +74,7 @@ class ReservationController extends Controller
 
         $reservation->update($request->all());
 
-        return redirect()->route('reservations.index')
+        return redirect()->route('admin.reservations.index')
             ->with('success', 'Réservation mise à jour avec succès.');
     }
 
@@ -85,7 +85,7 @@ class ReservationController extends Controller
     {
         $reservation->delete();
 
-        return redirect()->route('reservations.index')
+        return redirect()->route('admin.reservations.index')
             ->with('success', 'Réservation supprimée avec succès.');
     }
 }
