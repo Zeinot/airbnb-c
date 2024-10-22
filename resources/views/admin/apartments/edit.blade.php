@@ -140,10 +140,10 @@
         document.addEventListener(
             "pondInitevent",
             (e) => {
-                console.log("test")
+                // console.log("test")
                 var images = {{ Js::from($images) }};
-                console.log("images:", images)
-                console.log(e.detail.pond.addFiles(images))
+                // console.log("images:", images)
+                // console.log(e.detail.pond.addFiles(images))
             },
             // false,
         );

@@ -15,15 +15,17 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        dump($request->page);
-        $search = $request->search;
-        $type = $request->type;
-        $city = $request->city;
-        $address = $request->address;
-        $min_price = $request->min_price;
-        $max_price = $request->max_price;
-        $ASC = $request->ASC;
-        $DESC = $request->DESC;
+        [
+            "search" => $search,
+            "type" => $type,
+            "city" => $city,
+            "address" => $address,
+            "min_price" => $min_price,
+            "max_price" => $max_price,
+            "ASC" => $ASC,
+            "DESC" => $DESC
+        ] = $request;
+
         $query = Apartment::query();
         if (isset($search)) {
             $query = $query->whereAny(['title', 'type',
@@ -104,13 +106,22 @@ class ApartmentController extends Controller
         ]);
 
         DB::transaction(function () use ($request) {
+            [
+                "title" => $title,
+                "type" => $type,
+                "city" => $city,
+                "address" => $address,
+                "description" => $description,
+                "price" => $price,
+            ] = $request;
+
             $apartment = Apartment::create([
-                "title" => $request->title,
-                "type" => $request->type,
-                "city" => $request->city,
-                "address" => $request->address,
-                "description" => $request->description,
-                "price" => $request->price,
+                "title" => $title,
+                "type" => $type,
+                "city" => $city,
+                "address" => $address,
+                "description" => $description,
+                "price" => $price,
                 "user_id" => auth()->user()->id,
             ]);
             $images = request()->file('images');
