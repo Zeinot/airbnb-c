@@ -57,11 +57,12 @@ Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
 
 // Reservations routes
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('auth')->group(function () {
     // Liste des réservations
     Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
     // Créer une nouvelle réservation
+    Route::get('/reservations', [ReservationController::class, 'create'])->name('reservations.create');
     Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 
     // Afficher une réservation spécifique

@@ -30,11 +30,11 @@
                     <label for="apartment_id" class="form-label">Apartment</label>
                     <select name="apartment_id" id="apartment_id" class="form-control">
                         <option value="">Select an apartment</option>
-                        @foreach($apartments as $apartment)
-                            <option value="{{ $apartment->id }}" {{ old('apartment_id') == $apartment->id ? 'selected' : '' }}>
-                                {{ $apartment->title }} - {{ $apartment->city }}
-                            </option>
-                        @endforeach
+{{--                        @foreach($apartments as $apartment)--}}
+{{--                            <option value="{{ $apartment->id }}" {{ old('apartment_id') == $apartment->id ? 'selected' : '' }}>--}}
+{{--                                {{ $apartment->title }} - {{ $apartment->city }}--}}
+{{--                            </option>--}}
+{{--                        @endforeach--}}
                     </select>
                     @error('apartment_id')
                         <div class="text-danger">{{ $message }}</div>
@@ -46,11 +46,11 @@
                     <label for="user_id" class="form-label">User</label>
                     <select name="user_id" id="user_id" class="form-control">
                         <option value="">Select a user</option>
-                        @foreach($users as $user)
-                            <option value="{{ $user->id }}" {{ old('user_id') == $user->id ? 'selected' : '' }}>
-                                {{ $user->name }} - {{ $user->email }}
-                            </option>
-                        @endforeach
+{{--                        @foreach($users as $user)--}}
+{{--                            <option value="{{ $user->id }}" {{ old('user_id') == $user->id ? 'selected' : '' }}>--}}
+{{--                                {{ $user->name }} - {{ $user->email }}--}}
+{{--                            </option>--}}
+{{--                        @endforeach--}}
                     </select>
                     @error('user_id')
                         <div class="text-danger">{{ $message }}</div>
@@ -105,7 +105,7 @@
         document.getElementById('createForm').addEventListener('submit', function () {
             let submitBtn = document.getElementById('submitBtn');
             submitBtn.innerHTML = `
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Creating...
             `;
             submitBtn.disabled = true;
