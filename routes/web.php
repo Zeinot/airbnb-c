@@ -59,7 +59,7 @@ Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
 
 Route::middleware('auth')->group(function () {
     // Liste des réservations
-    Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
+    Route::get('/admin/reservations', [ReservationController::class, 'index'])->name('reservations.index');
 
     // Créer une nouvelle réservation
     Route::get('/reservations', [ReservationController::class, 'create'])->name('reservations.create');
