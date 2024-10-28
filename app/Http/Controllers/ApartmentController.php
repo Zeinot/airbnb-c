@@ -22,6 +22,12 @@ class ApartmentController extends Controller
     {
         Mail::to($request->email)->send(new ReservationMail([
             'email' => $request->email,
+            'apartment_title' => $apartment->title,
+//            'apartment_title' => $apartment->title,
+            'apartment_type' => $apartment->type,
+            'apartment_city' => $apartment->city,
+            'apartment_address' => $apartment->address,
+            'apartment_price' => $apartment->price,
             'phone' => $request->phone,
             'info' => $request->info,
         ]));

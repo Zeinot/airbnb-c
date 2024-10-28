@@ -1,5 +1,7 @@
-hello world from reservation email
+Reservation email
 
-@dump($data["email"])
-@dump($data["phone"])
-@dump($data["info"])
+@dump($data)
+
+{{--@dump($data["email"])--}}
+{{--@dump($data["phone"])--}}
+{{--@dump($data["info"])--}}
