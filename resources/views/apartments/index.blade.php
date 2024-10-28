@@ -158,7 +158,7 @@
                    <div>
                        <div
                            class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800
-                           bg-green-950
+
                            ">
                            <div class="h-56 w-full">
                                <a href="{{route("apartments.show", $apartment)}}">
@@ -169,7 +169,7 @@
                                                                         src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt=""/>--}}
                                </a>
                            </div>
-                           <div class="pt-6 h-fit flex justify-end flex-col bg-[#1da1f2]">
+                           <div class="pt-6 h-fit flex justify-end flex-col">
                                <div>    <div class="mb-4 flex items-center justify-between gap-4">
                             <span
                                 class="me-2 rounded bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300 capitalize">{{$apartment->city}}</span>

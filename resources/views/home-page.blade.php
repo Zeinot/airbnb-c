@@ -169,11 +169,11 @@
             <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Experience Home
                     Beyond Walls</h2>
-                <p class="capitalize mb-4 capitalize">We're architects of connection, blending strategy, design, and development. Visionaries
+                <p class="capitalize mb-4 ">We're architects of connection, blending strategy, design, and development. Visionaries
                     and problem solvers. Nimble enough for agility, yet expansive enough to deliver the magnitude you
                     need when you need it. Nimble enough for agility, yet expansive enough to deliver the magnitude you
                     need. </p>
-                <p class="capitalize capitalize">We're architects of connection, blending strategy, design, and development. Visionaries and problem
+                <p class="capitalize ">We're architects of connection, blending strategy, design, and development. Visionaries and problem
                     solvers. Nimble enough for agility.</p>
             </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
@@ -197,7 +197,7 @@
                 <p class="capitalize text-base text-gray-500 dark:text-gray-400 md:text-xl"> Streamline your experience from discovery to delivery, all under one roof.</p>
             </div>
 
-            <div class="grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+            <div class="grid grid-cols-1 gap-4 sm:mt-8 lg:grid-cols-3 xl:gap-8">
                 <div
                     class="rounded-lg border border-gray-200 bg-white p-4 text-center shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
                     <svg class="mx-auto mb-4 h-12 w-12 text-gray-400 dark:text-gray-500" aria-hidden="true"

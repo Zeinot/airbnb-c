@@ -13,10 +13,25 @@ use Illuminate\Support\Facades\Storage;
 class ApartmentController extends Controller
 {
 
-    public function create_reservation(Apartment $apartment) {
+    public function create_reservation(Apartment $apartment)
+    {
         return view('apartments.reservation.create', ["apartment" => $apartment]);
-    }  public function send(Apartment $apartment, Request $request) {
-      dd($request->all(),"\n--------------------------\n", $apartment);
+    }
+
+    public function send(Apartment $apartment, Request $request)
+    {
+        Mail::to($request->email)->send(new ReservationMail([
+            'email' => $request->email,
+            'apartment_title' => $apartment->title,
+//            'apartment_title' => $apartment->title,
+            'apartment_type' => $apartment->type,
+            'apartment_city' => $apartment->city,
+            'apartment_address' => $apartment->address,
+            'apartment_price' => $apartment->price,
+            'phone' => $request->phone,
+            'info' => $request->info,
+        ]));
+        return redirect(route("home"));
     }
 
     /**
@@ -236,10 +251,7 @@ class ApartmentController extends Controller
 
     public function send_reservation_email($recipient_email = null)
     {
-        Mail::to('omarsarsarpro@gmail.com')->send(new ReservationMail([
-            'title' => 'The Title',
-            'body' => 'The Body',
-        ]));
+
     }
 
 
