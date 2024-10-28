@@ -25,6 +25,7 @@ class ApartmentController extends Controller
             'phone' => $request->phone,
             'info' => $request->info,
         ]));
+        return redirect(route("home"));
     }
 
     /**
