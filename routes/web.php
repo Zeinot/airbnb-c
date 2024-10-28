@@ -13,6 +13,8 @@ Route::get('/', function () {
 })->name("home");
 
 
+Route::get('/mail',  [   ApartmentController::class, "send_reservation_email"]);
+
 //Route::get('/n', function () {
 //    return view('welcome');
 //})
@@ -25,6 +27,10 @@ Route::get('/dashboard', function () {
     ->name('dashboard');;
 
 Route::get('/apartments', [ApartmentController::class, 'index'])->name('apartments.index');
+Route::get('/apartments/reservation/{apartment}', [ApartmentController::class, 'create_reservation'])
+    ->name('apartments.reservation.create');
+Route::post('/apartments/reservation/{apartment}', [ApartmentController::class, 'send'])
+    ->name('apartments.reservation.send');
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ApartmentController::class, 'admin_index'])->name('apartments.admin_index');
