@@ -1,2 +1,2 @@
 hello world from reservation email
-{{--{{$data}}--}}
+{{--@dump($data["title"])--}}
