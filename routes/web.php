@@ -13,6 +13,8 @@ Route::get('/', function () {
 })->name("home");
 
 
+Route::get('/mail',  [   ApartmentController::class, "send_reservation_email"]);
+
 //Route::get('/n', function () {
 //    return view('welcome');
 //})

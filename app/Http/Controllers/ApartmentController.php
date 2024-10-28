@@ -227,9 +227,9 @@ class ApartmentController extends Controller
     }
 
 
-    public function send_reservation_email($recipient_email)
+    public function send_reservation_email($recipient_email = null)
     {
-        Mail::to('your_test_mail@gmail.com')->send(new ReservationMail([
+        Mail::to('omarsarsarpro@gmail.com')->send(new ReservationMail([
             'title' => 'The Title',
             'body' => 'The Body',
         ]));
