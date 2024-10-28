@@ -16,7 +16,12 @@ class ApartmentController extends Controller
     public function create_reservation(Apartment $apartment) {
         return view('apartments.reservation.create', ["apartment" => $apartment]);
     }  public function send(Apartment $apartment, Request $request) {
-      dd($request->all(),"\n--------------------------\n", $apartment);
+//    $request->email
+    Mail::to($request->email)->send(new ReservationMail([
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'info' => $request->info,
+    ]));
     }
 
     /**
@@ -236,10 +241,7 @@ class ApartmentController extends Controller
 
     public function send_reservation_email($recipient_email = null)
     {
-        Mail::to('omarsarsarpro@gmail.com')->send(new ReservationMail([
-            'title' => 'The Title',
-            'body' => 'The Body',
-        ]));
+
     }
 
 
