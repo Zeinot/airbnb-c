@@ -2,7 +2,7 @@
 @section("content")
     {{-- @dump($apartment) --}}
     <!-- Main modal -->
-    <div id="default-modal" tabindex="-1" aria-hidden="true"
+{{--    <div id="default-modal" tabindex="-1" aria-hidden="true"
          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-2xl max-h-full">
             <!-- Modal content -->
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
     <div>
         <section class="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased">
             <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
@@ -216,6 +216,8 @@
                                Add to favorites
                              </a> --}}
 
+
+                            <!-- Modal toggle -->
                             <button
                                 data-modal-target="default-modal" data-modal-toggle="default-modal"
                                 class="text-white mt-4 sm:mt-0 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
@@ -239,8 +241,6 @@
 
                                 Contact
                             </button>
-                            <!-- Modal toggle -->
-
 
                         </div>
 
