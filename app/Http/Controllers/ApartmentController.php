@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
+
+    public function create_reservation(Apartment $apartment) {
+        return view('apartments.reservation.create', ["apartment" => $apartment]);
+    }
+
     /**
      * Display a listing of the resource.
      */
