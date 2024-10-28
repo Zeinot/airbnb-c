@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ReservationMail;
 use App\Models\Apartment;
 use App\Models\ApartmentImages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
@@ -212,4 +214,15 @@ class ApartmentController extends Controller
 
         return redirect(route("apartments.admin_index"));
     }
+
+
+    public function send_reservation_email($recipient_email)
+    {
+        Mail::to('your_test_mail@gmail.com')->send(new ReservationMail([
+            'title' => 'The Title',
+            'body' => 'The Body',
+        ]));
+    }
+
+
 }
