@@ -31,7 +31,9 @@ Route::get('/apartments/reservation/{apartment}', [ApartmentController::class, '
     ->name('apartments.reservation.create');
 Route::post('/apartments/reservation/{apartment}', [ApartmentController::class, 'send'])
     ->name('apartments.reservation.send');
-
+Route::get("view/mail",function () {
+    return view("mail.reservation-mail");
+});
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ApartmentController::class, 'admin_index'])->name('apartments.admin_index');
     Route::get('/apartments/{apartment}/', [ApartmentController::class, 'show'])->name('apartments.show');
