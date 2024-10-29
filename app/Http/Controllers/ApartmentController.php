@@ -20,6 +20,11 @@ class ApartmentController extends Controller
 
     public function send(Apartment $apartment, Request $request)
     {
+        $request->validate([
+            "email" => "required|email",
+            "phone" => "required",
+        ]);
+
         Mail::to($request->email)->send(new ReservationMail([
             'email' => $request->email,
             'apartment_title' => $apartment->title,
