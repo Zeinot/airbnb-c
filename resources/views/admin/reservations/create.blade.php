@@ -1,6 +1,11 @@
 @extends("layouts.custom.admin")
 @section("content")
-{{--    @dd(\App\Models\Apartment::all())--}}
+@php
+    $apartments = \App\Models\Apartment::all()
+@endphp
+
+
+    {{--    @dd(\App\Models\Apartment::all())--}}
     {{-- Display validation errors if any --}}
     @if($errors->any())
         <div class="alert alert-danger mb-4">
