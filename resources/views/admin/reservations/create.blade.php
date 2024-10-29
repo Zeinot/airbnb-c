@@ -1,6 +1,11 @@
 @extends("layouts.custom.admin")
 @section("content")
+@php
+    $apartments = \App\Models\Apartment::all()
+@endphp
 
+
+    {{--    @dd(\App\Models\Apartment::all())--}}
     {{-- Display validation errors if any --}}
     @if($errors->any())
         <div class="alert alert-danger mb-4">
@@ -30,11 +35,12 @@
                     <label for="apartment_id" class="form-label">Apartment</label>
                     <select name="apartment_id" id="apartment_id" class="form-control">
                         <option value="">Select an apartment</option>
-{{--                        @foreach($apartments as $apartment)--}}
-{{--                            <option value="{{ $apartment->id }}" {{ old('apartment_id') == $apartment->id ? 'selected' : '' }}>--}}
-{{--                                {{ $apartment->title }} - {{ $apartment->city }}--}}
-{{--                            </option>--}}
-{{--                        @endforeach--}}
+
+                        @foreach($apartments as $apartment)
+                            <option value="{{ $apartment->id }}" {{ old('apartment_id') == $apartment->id ? 'selected' : '' }}>
+                                {{ $apartment->title }} - {{ $apartment->city }}
+                            </option>
+                        @endforeach
                     </select>
                     @error('apartment_id')
                         <div class="text-danger">{{ $message }}</div>

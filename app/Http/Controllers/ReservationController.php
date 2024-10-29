@@ -21,6 +21,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
+        dump(auth()->user());
         return view('admin.reservations.create');
     }
 
