@@ -55,9 +55,15 @@
                                     class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                 Send
                             </button>
-                            <button type="button"
-                                    onclick="handleClick()"
-                                    class="h-[40] w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+
+
+{{--                            <button type="submit"></button>--}}
+                        </div>
+                        <script>
+                            const loading =`   <button type="button"
+disabled
+
+                                    class="cursor-wait h-[40] w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                 <div role="status" class="flex justify-center">
                                     <svg aria-hidden="true"
                                          class="w-5 h-5 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -71,13 +77,9 @@
                                     </svg>
                                     <span class="sr-only">Loading...</span>
                                 </div>
-                            </button>
-
-{{--                            <button type="submit"></button>--}}
-                        </div>
-                        <script>
+                            </button>`
                             function handleClick() {
-
+                                document.getElementById("send-button").innerHTML = loading
                             }
                         </script>
                     </form>
